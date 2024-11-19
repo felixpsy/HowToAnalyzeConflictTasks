@@ -1,9 +1,56 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "A Beginners Guide on How to Analyse Conflict Tasks"
+author: "Felix Cramer"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# About {-}
+
+This book aims to guide through common steps when analyzing conflict tasks such as flanker, Simon, Stroop or prime-target tasks. 
+
+It is conceptualized to provide students with ideas on how to visualize and how to analyze their theses data, but also to establish a consistent approach on how to pre-process data. The latter enables us to better compare results to other data from the lab. 
+
+Feel free to take any code snippets from this guide, but make sure to correctly adjust it to your data.
+
+Please contact me for any suggestions or questions: felix.cramer@uni-tuebingen.de
+
+
+## Previous Experience in R {-}
+
+If you are already familiar with programming in R, I would suggest you to browse through the sections and just pick what might be helpful for you - but please make sure to read to the Chapter Data Preparation II.
+
+If you don't really know what to do in R, I would recommend you to start at the very beginning. This book is designed to assist students with little to no background in R. However, a general understanding of R is required if you want to understand and adapt the here provided code. 
+
+There are a lot of online books from which you can improve your general R skills.
+
+For example: 
+
+[An Introduction to R](https://intro2r.com/) (Douglas et al., 2024), Chapter 1-6 give a solid and compact introduction into R and the most common IDE R Studio.
+
+
+[R for Data Science (2e)](https://r4ds.hadley.nz/) (Hadley Wickham, 2024) is an introduction into the tidyverse packages, focusing on data preparation and data visualiation. 
+
+
+
+## Coding Style {-}
+
+This book primarily makes suggestions in Base R code, but also there are also examples on how to use functions from several packages, such as `dyplr`, `ggplot2` or `sciplot`.
+
+
+## Content Overview {-}
+
+Chapters 1-5 focus in chronological order on the different steps that have to be taken in order to get final plots and results from raw data:
+
+* Chapter 1: How to import you raw experimental data into R
+* Chapter 2: How to wrangle your data into a well-ordered and clear dataframe
+* Chapter 3: What trials to exclude and how to exclude them
+* Chapter 4: Some ideas on how to visualize conflict task data
+* Chapter 5: Some approaches of analyzing data and how to conduct them in R
+
+Chapter 6 then extensively looks at the steps 3-5 for specific effects: congruency effects (CE), congruency sequence effects (CSE), Mixing Costs/ Switching Costs, task switching, across-task and within-task CSE, Proportion Congruency Effect (PCE), post-error slowing (PES), post-error increase in accuracy (PIA), PERI, deltaplots
+
+
+
+
 
