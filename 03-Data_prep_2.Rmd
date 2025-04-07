@@ -1,0 +1,8 @@
+# Data Preparation II
+
+data trimming/ exclsuion
+
+http://colingorrie.github.io/outlier-detection.html
+
+reaction times (RT)s faster than 100 ms or slower than 1.5 interquartile ranges above the participant’s third quartile
+of the RT distribution were removed (Tukey, 1977).

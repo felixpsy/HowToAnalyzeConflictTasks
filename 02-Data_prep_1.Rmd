@@ -1,0 +1,130 @@
+
+# Data Preparation I
+
+If you have imported a not previously edited output file from the server you ran the experiment on - you now should be confronted with a mess of columns and rows.
+
+
+## Select Relevant Variables
+A first recommended step would be to subset all relevant columns and get rid of the irrelevant ones. You could either browse through the dataframe or run functions like `str(dat)` or `head(dat)` to get an idea of what variables might be important.
+
+This step could look something like the following code:
+```{r, echo = TRUE}
+
+dat <- read.table("myfile.csv", header = TRUE, sep = ";")
+
+# subset relevant variables
+dat2 <- dat[, c("Subject", "Block", "Running.LogLevel5.", "Colour", "Flanker",
+                "POS", "Target", "ITIDuration", "COMP", "Target.RT",
+                "Target.ACC")]
+
+# rename relevant variables
+names(dat2) <- c("Subject", "Block", "Task", "Colour", "Flanker", "Position",
+                 "Target", "ITIDuration", "Congruency", "RT", "ACC")
+
+```
+
+
+## Create New Variables
+
+You most likely need to create new variables also. Depending on your research question, this could be for example consecutive trial numbers for each block, 
+
+
+
+```{r, echo = TRUE}
+
+# consecutive trial number in each block
+dat2$BlockTrialNr <- with(dat2, ave(seq_along(Block), Block + (100 * Subject), FUN = seq_along))
+
+# 
+
+
+
+```
+
+
+
+
+# Data Preparation II
+\newpage
+
+# References
+
+
+
+renaming: if you didnt create the output file by yourself (e.g., assigned variable values and names which should be stored, it can sometimes be a pain to find the correct variables, for example Congruency is often named Cong or Comp and numerically coded (e.g., with values 1 and 2)
+
+# Data preparation
+
+A few examples for new variables with simple ifelse() statements or dyplr functions
+
+a) different task types (e.g., flanker and Simon or different proportions of )
+```{r, }
+# assign "Flanker" to each value which starts with "Flanker*", else assign value "Simon"
+dat2$Task_Type <- ifelse(dat2$Task == "FlankerList20"
+                         | dat2$Task == "FlankerList50"
+                         | dat2$Task == "FlankerList80", "Flanker", "Simon")
+```
+
+b) different proportions of congruent and incongruent trials. You could also use dyplr functions
+```{r, }
+# assign "Flanker" to each value which starts with "Flanker*", else assign value "Simon"
+
+dat2$Task_Type <- dyplr::startsWith(...)
+```
+
+
+c) task switching
+...
+
+d) N-1 variables: if you want to investigate in congruency sequence effects (CSE), or post-error adjustments, you need variables 
+
+```{r, }
+# the function lag from the dplyr package gives the value of the previous trial value of a defined variable. You can either call the function by loading the package (library(dplyr)) - or simply call it without loading the package dplyr::lag(...)
+
+# Accuracy N-1
+dat2$ACC_N_1 <- dplyr::lag(dat2$ACC)
+
+# Congruency N-1
+dat2$Congruency_N_1 <- dplyr::lag(dat2$Congruency)
+
+```
+
+
+## data types
+integer vs numeric?
+
+factorize variables (get correct value for congruent vs incongruent)
+
+
+
+
+
+## dplyr
+
+stacking commands, few code lines, not always easy to understand or to 
+
+(tidyverse book link)
+```{r, }
+dat2 <- dat %>%
+  mutate(
+  Task = Running.LogLevel5.,
+  Task_Type = as.factor(case_when(
+    startsWith(Task, "FlankerList") ~ "Flanker",
+    startsWith(Task, "SimonList")~ "Simon")),
+  Position = POS,
+  Congruency = as.factor(case_when(
+           COMP == 1 ~ "congruent",
+           COMP == -1 ~ "incongruent")),
+  RT = Target.RT,
+  ACC = Target.ACC,
+  Congruency_N_1 = lag(Congruency),
+  ACC_N_1 = lag(ACC)) %>%
+    group_by(Block, Subject) %>%
+    mutate(BlockTrialNr = row_number()) %>%
+    ungroup %>%
+    select(Subject, Block, Task, Task_Type, Colour, Flanker, Position,
+  Target, ITIDuration, Congruency, Congruency_N_1, BlockTrialNr, RT, ACC,
+  ACC_N_1)
+```
+
+
