@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Data Preparation I | A Beginners Guide on How to Analyse Conflict Tasks</title>
+  <meta name="description" content="Chapter 2 Data Preparation I | A Beginners Guide on How to Analyse Conflict Tasks" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Data Preparation I | A Beginners Guide on How to Analyse Conflict Tasks" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Data Preparation I | A Beginners Guide on How to Analyse Conflict Tasks" />
+  
+  
+  
+
+<meta name="author" content="Felix Cramer" />
+
+
+<meta name="date" content="2025-06-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="import-data.html"/>
+<link rel="next" href="data-preparation-ii.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#previous-experience-in-r"><i class="fa fa-check"></i>Previous Experience in R</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#coding-style"><i class="fa fa-check"></i>Coding Style</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#content-overview"><i class="fa fa-check"></i>Content Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="import-data.html"><a href="import-data.html"><i class="fa fa-check"></i><b>1</b> Import Data</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="import-data.html"><a href="import-data.html#set-directory-to-file-path"><i class="fa fa-check"></i><b>1.1</b> Set directory to file path</a></li>
+<li class="chapter" data-level="1.2" data-path="import-data.html"><a href="import-data.html#import-files"><i class="fa fa-check"></i><b>1.2</b> Import files</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="import-data.html"><a href="import-data.html#import-csv-files"><i class="fa fa-check"></i><b>1.2.1</b> Import csv files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-preparation-i.html"><a href="data-preparation-i.html"><i class="fa fa-check"></i><b>2</b> Data Preparation I</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-preparation-i.html"><a href="data-preparation-i.html#select-relevant-variables"><i class="fa fa-check"></i><b>2.1</b> Select Relevant Variables</a></li>
+<li class="chapter" data-level="2.2" data-path="data-preparation-i.html"><a href="data-preparation-i.html#create-new-variables"><i class="fa fa-check"></i><b>2.2</b> Create New Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="data-preparation-i.html"><a href="data-preparation-i.html#factorize-variables"><i class="fa fa-check"></i><b>2.3</b> Factorize variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-preparation-i.html"><a href="data-preparation-i.html#tidyverse"><i class="fa fa-check"></i><b>2.4</b> Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html"><i class="fa fa-check"></i><b>3</b> Data Preparation II</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-participants"><i class="fa fa-check"></i><b>3.1</b> Exclusion of participants</a></li>
+<li class="chapter" data-level="3.2" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-trials"><i class="fa fa-check"></i><b>3.2</b> Exclusion of trials</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-outliers"><i class="fa fa-check"></i><b>3.2.1</b> Exclusion of outliers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>4</b> Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analysis.html"><a href="analysis.html#t-test"><i class="fa fa-check"></i><b>4.1</b> t-test</a></li>
+<li class="chapter" data-level="4.2" data-path="analysis.html"><a href="analysis.html#anova"><i class="fa fa-check"></i><b>4.2</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3" data-path="analysis.html"><a href="analysis.html#lmms-glmms"><i class="fa fa-check"></i><b>4.3</b> LMMs/ GLMMs</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="analysis.html"><a href="analysis.html#building-models-adding-random-effects"><i class="fa fa-check"></i><b>4.3.1</b> Building models: Adding random effects</a></li>
+<li class="chapter" data-level="4.3.2" data-path="analysis.html"><a href="analysis.html#testing-models-testmod"><i class="fa fa-check"></i><b>4.3.2</b> Testing models {testmod}</a></li>
+<li class="chapter" data-level="4.3.3" data-path="analysis.html"><a href="analysis.html#convergence-issues-and-pragmatic-approaches"><i class="fa fa-check"></i><b>4.3.3</b> convergence issues and pragmatic approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="analysis.html"><a href="analysis.html#bayesian-hypothesis-testing"><i class="fa fa-check"></i><b>4.4</b> Bayesian hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="analysis.html"><a href="analysis.html#bayes-factors-for-classical-tests"><i class="fa fa-check"></i><b>4.4.1</b> Bayes factors for classical tests</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="analysis.html"><a href="analysis.html#bayesian-modelling"><i class="fa fa-check"></i><b>4.5</b> Bayesian modelling?</a></li>
+<li class="chapter" data-level="4.6" data-path="analysis.html"><a href="analysis.html#drift-diffusion-modelling"><i class="fa fa-check"></i><b>4.6</b> Drift diffusion modelling</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html"><i class="fa fa-check"></i><b>5</b> Basic Visualisation Ideas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#interaction-plots"><i class="fa fa-check"></i><b>5.1</b> Interaction Plots</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#base-r-option"><i class="fa fa-check"></i><b>5.1.1</b> Base R Option</a></li>
+<li class="chapter" data-level="5.1.2" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#ggplot2-option"><i class="fa fa-check"></i><b>5.1.2</b> ggplot2 Option</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#barplots"><i class="fa fa-check"></i><b>5.2</b> Barplots</a></li>
+<li class="chapter" data-level="5.3" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#density-plots"><i class="fa fa-check"></i><b>5.3</b> Density Plots</a></li>
+<li class="chapter" data-level="5.4" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#combined-plots"><i class="fa fa-check"></i><b>5.4</b> Combined Plots</a></li>
+<li class="chapter" data-level="5.5" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#plotting-mean-differences"><i class="fa fa-check"></i><b>5.5</b> Plotting mean differences</a></li>
+<li class="chapter" data-level="5.6" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#final-notes-on-graphics"><i class="fa fa-check"></i><b>5.6</b> Final notes on graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="specific-effects.html"><a href="specific-effects.html"><i class="fa fa-check"></i><b>6</b> Specific Effects</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="specific-effects.html"><a href="specific-effects.html#ces"><i class="fa fa-check"></i><b>6.1</b> CEs</a></li>
+<li class="chapter" data-level="6.2" data-path="specific-effects.html"><a href="specific-effects.html#get-dat-as-dataframe-correctly"><i class="fa fa-check"></i><b>6.2</b> get dat as dataframe correctly</a></li>
+<li class="chapter" data-level="6.3" data-path="specific-effects.html"><a href="specific-effects.html#step-1-prepare-dataframes-for-acc-and-rt"><i class="fa fa-check"></i><b>6.3</b> Step 1: prepare dataframes for ACC and RT</a></li>
+<li class="chapter" data-level="6.4" data-path="specific-effects.html"><a href="specific-effects.html#step-2"><i class="fa fa-check"></i><b>6.4</b> Step 2</a></li>
+<li class="chapter" data-level="6.5" data-path="specific-effects.html"><a href="specific-effects.html#step-3"><i class="fa fa-check"></i><b>6.5</b> Step 3</a></li>
+<li class="chapter" data-level="6.6" data-path="specific-effects.html"><a href="specific-effects.html#cses"><i class="fa fa-check"></i><b>6.6</b> CSEs</a></li>
+<li class="chapter" data-level="6.7" data-path="specific-effects.html"><a href="specific-effects.html#mixing-costs-und-switching-costs"><i class="fa fa-check"></i><b>6.7</b> Mixing Costs und Switching Costs</a></li>
+<li class="chapter" data-level="6.8" data-path="specific-effects.html"><a href="specific-effects.html#task-switching"><i class="fa fa-check"></i><b>6.8</b> Task Switching</a></li>
+<li class="chapter" data-level="6.9" data-path="specific-effects.html"><a href="specific-effects.html#post-error-slowing"><i class="fa fa-check"></i><b>6.9</b> Post-error Slowing</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Beginners Guide on How to Analyse Conflict Tasks</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-preparation-i" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Data Preparation I<a href="data-preparation-i.html#data-preparation-i" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>If you have imported a raw output file directly from the experiment server, you’ll likely be faced with a messy dataset full of many columns and rows. Although it’s possible to perform all the cleaning steps in just a few lines of code using the <code>dyplr</code> package, it is recommended to carry out each step separately at first to ensure everything is correct.</p>
+<div id="select-relevant-variables" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Select Relevant Variables<a href="data-preparation-i.html#select-relevant-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A first recommended step is to subset all relevant columns, that is, creating a new dataframe with only the variables you want to keep. You can either browse through the dataframe manually or use functions like <code>str(dat)</code> or <code>head(dat)</code> to get an overview of the variables and decide which ones are important.</p>
+<p>This step might look like the following code:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-preparation-i.html#cb1-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;myfile.csv&quot;</span>)</span>
+<span id="cb1-2"><a href="data-preparation-i.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="data-preparation-i.html#cb1-3" tabindex="-1"></a><span class="co"># subset relevant variables</span></span>
+<span id="cb1-4"><a href="data-preparation-i.html#cb1-4" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat[, <span class="fu">c</span>(<span class="st">&quot;Subject&quot;</span>, <span class="st">&quot;Block&quot;</span>, <span class="st">&quot;Running.LogLevel5.&quot;</span>, <span class="st">&quot;Colour&quot;</span>, <span class="st">&quot;Flanker&quot;</span>,</span>
+<span id="cb1-5"><a href="data-preparation-i.html#cb1-5" tabindex="-1"></a>                <span class="st">&quot;POS&quot;</span>, <span class="st">&quot;Target&quot;</span>, <span class="st">&quot;ITIDuration&quot;</span>, <span class="st">&quot;COMP&quot;</span>, <span class="st">&quot;Target.RT&quot;</span>,</span>
+<span id="cb1-6"><a href="data-preparation-i.html#cb1-6" tabindex="-1"></a>                <span class="st">&quot;Target.ACC&quot;</span>)]</span>
+<span id="cb1-7"><a href="data-preparation-i.html#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="data-preparation-i.html#cb1-8" tabindex="-1"></a><span class="co"># rename relevant variables</span></span>
+<span id="cb1-9"><a href="data-preparation-i.html#cb1-9" tabindex="-1"></a><span class="fu">names</span>(dat2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Subject&quot;</span>, <span class="st">&quot;Block&quot;</span>, <span class="st">&quot;Task&quot;</span>, <span class="st">&quot;Colour&quot;</span>, <span class="st">&quot;Flanker&quot;</span>, <span class="st">&quot;Position&quot;</span>,</span>
+<span id="cb1-10"><a href="data-preparation-i.html#cb1-10" tabindex="-1"></a>                 <span class="st">&quot;Target&quot;</span>, <span class="st">&quot;ITIDuration&quot;</span>, <span class="st">&quot;Congruency&quot;</span>, <span class="st">&quot;RT&quot;</span>, <span class="st">&quot;ACC&quot;</span>)</span></code></pre></div>
+<p>Note that if you didn’t create the output file yourself (i.e., didn’t assign variable names or values explicitly), it can sometimes be tricky to identify the variables of interest. For example, “Congruency” might be labeled as “Cong” or “Comp” and encoded numerically (e.g., 1 and 2, or 0 and 1). Take your time exploring the data to make sure you understand how the variables are named and coded.</p>
+</div>
+<div id="create-new-variables" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Create New Variables<a href="data-preparation-i.html#create-new-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You will most likely need to create new variables as well. Depending on your research question, here are some common examples you might consider.</p>
+<ul>
+<li><strong>Consecutive trial numbers for each block</strong>:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-preparation-i.html#cb2-1" tabindex="-1"></a><span class="co"># Base R option</span></span>
+<span id="cb2-2"><a href="data-preparation-i.html#cb2-2" tabindex="-1"></a><span class="co"># consecutive trial number in each block</span></span>
+<span id="cb2-3"><a href="data-preparation-i.html#cb2-3" tabindex="-1"></a>trials <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># adjust the number of trials per block</span></span>
+<span id="cb2-4"><a href="data-preparation-i.html#cb2-4" tabindex="-1"></a>dat2<span class="sc">$</span>BlockTrialNr <span class="ot">&lt;-</span> <span class="fu">with</span>(dat2, </span>
+<span id="cb2-5"><a href="data-preparation-i.html#cb2-5" tabindex="-1"></a>                          <span class="fu">ave</span>(<span class="fu">seq_along</span>(Block), Block <span class="sc">+</span> (trials <span class="sc">*</span> Subject), </span>
+<span id="cb2-6"><a href="data-preparation-i.html#cb2-6" tabindex="-1"></a>                              <span class="at">FUN =</span> seq_along))</span>
+<span id="cb2-7"><a href="data-preparation-i.html#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="data-preparation-i.html#cb2-8" tabindex="-1"></a><span class="co"># dyplr option</span></span>
+<span id="cb2-9"><a href="data-preparation-i.html#cb2-9" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-10"><a href="data-preparation-i.html#cb2-10" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a href="data-preparation-i.html#cb2-11" tabindex="-1"></a>  <span class="fu">group_by</span>(Block, Subject) <span class="sc">%&gt;%</span></span>
+<span id="cb2-12"><a href="data-preparation-i.html#cb2-12" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">BlockTrialNr =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb2-13"><a href="data-preparation-i.html#cb2-13" tabindex="-1"></a>    ungroup</span></code></pre></div>
+<ul>
+<li><strong>New variable based on another variable</strong>: You can use simple <code>ifelse()</code> statements here.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-preparation-i.html#cb3-1" tabindex="-1"></a><span class="co"># example: assign &quot;Flanker&quot; to each value which starts with &quot;Flanker*&quot;, </span></span>
+<span id="cb3-2"><a href="data-preparation-i.html#cb3-2" tabindex="-1"></a><span class="co"># else assign value &quot;Simon&quot;</span></span>
+<span id="cb3-3"><a href="data-preparation-i.html#cb3-3" tabindex="-1"></a>dat2<span class="sc">$</span>Task_Type <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dat2<span class="sc">$</span>Task <span class="sc">==</span> <span class="st">&quot;FlankerList20&quot;</span></span>
+<span id="cb3-4"><a href="data-preparation-i.html#cb3-4" tabindex="-1"></a>                         <span class="sc">|</span> dat2<span class="sc">$</span>Task <span class="sc">==</span> <span class="st">&quot;FlankerList50&quot;</span></span>
+<span id="cb3-5"><a href="data-preparation-i.html#cb3-5" tabindex="-1"></a>                         <span class="sc">|</span> dat2<span class="sc">$</span>Task <span class="sc">==</span> <span class="st">&quot;FlankerList80&quot;</span>, <span class="st">&quot;Flanker&quot;</span>, <span class="st">&quot;Simon&quot;</span>)</span></code></pre></div>
+<ul>
+<li><strong>N-1 variables</strong>:
+If you want to investigate congruency sequence effects (CSE) or post-error adjustments, you’ll need variables that code the congruency or accuracy of the previous trial. The <code>lag()</code> function from the <code>dplyr</code> package allows you to access the value of a variable from the preceding trial. You can use it by loading the package with <code>library(dplyr)</code> or by calling it directly without loading the package using <code>dplyr::lag()</code>.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-preparation-i.html#cb4-1" tabindex="-1"></a><span class="co"># Accuracy N-1</span></span>
+<span id="cb4-2"><a href="data-preparation-i.html#cb4-2" tabindex="-1"></a>dat2<span class="sc">$</span>ACC_N_1 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">lag</span>(dat2<span class="sc">$</span>ACC)</span>
+<span id="cb4-3"><a href="data-preparation-i.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="data-preparation-i.html#cb4-4" tabindex="-1"></a><span class="co"># Congruency N-1</span></span>
+<span id="cb4-5"><a href="data-preparation-i.html#cb4-5" tabindex="-1"></a>dat2<span class="sc">$</span>Congruency_N_1 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">lag</span>(dat2<span class="sc">$</span>Congruency)</span></code></pre></div>
+<ul>
+<li><strong>A variable for task switches</strong>:
+This is quite straightforward. First, create a variable for the previous task using <code>lag()</code>, then use an <code>ifelse()</code> statement to generate a new variable that indicates whether a task switch or task repetition occurred.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-preparation-i.html#cb5-1" tabindex="-1"></a>dat2<span class="sc">$</span>Task_N_1 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">lag</span>(dat2<span class="sc">$</span>Task_Type)</span>
+<span id="cb5-2"><a href="data-preparation-i.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="data-preparation-i.html#cb5-3" tabindex="-1"></a>dat2<span class="sc">$</span>Task_Switch <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dat2<span class="sc">$</span>Task_Type <span class="sc">==</span> dat2<span class="sc">$</span>Task_N_1, </span>
+<span id="cb5-4"><a href="data-preparation-i.html#cb5-4" tabindex="-1"></a>                           <span class="st">&quot;repetition&quot;</span>, <span class="st">&quot;switch&quot;</span>)</span></code></pre></div>
+<ul>
+<li><strong>N+1 variable for post-error slowing</strong>:
+Post-error slowing effects can be measured using different methods (see Chapter 6 for details, REF). For example, the “yoked” method compares post-error trials with pre-error trials. To apply this approach, you need to create an N+1 variable—that is, a variable referencing the next trial—<em>before</em> excluding any trials from your dataset.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-preparation-i.html#cb6-1" tabindex="-1"></a><span class="co"># Accuracy N+1 variable</span></span>
+<span id="cb6-2"><a href="data-preparation-i.html#cb6-2" tabindex="-1"></a>dat2<span class="sc">$</span>ACC_N_1 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">lead</span>(dat2<span class="sc">$</span>ACC)</span></code></pre></div>
+</div>
+<div id="factorize-variables" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Factorize variables<a href="data-preparation-i.html#factorize-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Make sure to factorize any variable representing an experimental condition. For example, variables like congruency or task_switch. Avoid factorizing outcome measures. Below are examples of how to factorize both character and numeric variables.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-preparation-i.html#cb7-1" tabindex="-1"></a><span class="do">## 1) factorizing character variables</span></span>
+<span id="cb7-2"><a href="data-preparation-i.html#cb7-2" tabindex="-1"></a>dat2<span class="sc">$</span>Task <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(dat2<span class="sc">$</span>Task)</span>
+<span id="cb7-3"><a href="data-preparation-i.html#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="data-preparation-i.html#cb7-4" tabindex="-1"></a><span class="do">## 2) factorizing numeric (integer) variables</span></span>
+<span id="cb7-5"><a href="data-preparation-i.html#cb7-5" tabindex="-1"></a><span class="co"># check the variable values of the factor levels</span></span>
+<span id="cb7-6"><a href="data-preparation-i.html#cb7-6" tabindex="-1"></a><span class="fu">str</span>(dat2<span class="sc">$</span>Congruency)</span>
+<span id="cb7-7"><a href="data-preparation-i.html#cb7-7" tabindex="-1"></a><span class="fu">View</span>(dat2)</span>
+<span id="cb7-8"><a href="data-preparation-i.html#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="data-preparation-i.html#cb7-9" tabindex="-1"></a><span class="co"># which level is congruent - which incongruent?</span></span>
+<span id="cb7-10"><a href="data-preparation-i.html#cb7-10" tabindex="-1"></a><span class="fu">mean</span>(dat2<span class="sc">$</span>RT[dat2<span class="sc">$</span>Congruency <span class="sc">==</span> <span class="sc">-</span><span class="dv">1</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-11"><a href="data-preparation-i.html#cb7-11" tabindex="-1"></a><span class="fu">mean</span>(dat2<span class="sc">$</span>RT[dat2<span class="sc">$</span>Congruency <span class="sc">==</span> <span class="dv">1</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-12"><a href="data-preparation-i.html#cb7-12" tabindex="-1"></a><span class="co"># -&gt; 1 is congruent due to smaller mean response time</span></span>
+<span id="cb7-13"><a href="data-preparation-i.html#cb7-13" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="data-preparation-i.html#cb7-14" tabindex="-1"></a><span class="co"># assign correct factor labels to the levels</span></span>
+<span id="cb7-15"><a href="data-preparation-i.html#cb7-15" tabindex="-1"></a>dat2<span class="sc">$</span>Congruency <span class="ot">&lt;-</span> <span class="fu">factor</span>(dat2<span class="sc">$</span>Congruency, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>),</span>
+<span id="cb7-16"><a href="data-preparation-i.html#cb7-16" tabindex="-1"></a>                          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;congruent&quot;</span>, <span class="st">&quot;incongruent&quot;</span>))</span></code></pre></div>
+</div>
+<div id="tidyverse" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Tidyverse<a href="data-preparation-i.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you are comfortable with the tidyverse style, you can perform all the steps above (and more) in just a few concise lines of code. However, if you’re new to pipes, this kind of code can be more confusing than helpful. It’s always better to prioritize clear, understandable code over slick shortcuts.
+Note: the following example uses the old pipe operator, see the <a href="https://style.tidyverse.org/pipes.html">tidyverse style guide</a> for the latest one (both the old and new pipe operators are still supported).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-preparation-i.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># or library(tidyverse), which loads all tidyverse packages</span></span>
+<span id="cb8-2"><a href="data-preparation-i.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="data-preparation-i.html#cb8-3" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="data-preparation-i.html#cb8-4" tabindex="-1"></a>  <span class="co"># use mutate() to rename variables or create new variables</span></span>
+<span id="cb8-5"><a href="data-preparation-i.html#cb8-5" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-6"><a href="data-preparation-i.html#cb8-6" tabindex="-1"></a>  <span class="co"># example for a renaming (don&#39;t forget the comma after each variable)</span></span>
+<span id="cb8-7"><a href="data-preparation-i.html#cb8-7" tabindex="-1"></a>  <span class="at">Task =</span> Running.LogLevel5.,</span>
+<span id="cb8-8"><a href="data-preparation-i.html#cb8-8" tabindex="-1"></a>  <span class="co"># example for a new variable (already factorized)</span></span>
+<span id="cb8-9"><a href="data-preparation-i.html#cb8-9" tabindex="-1"></a>  <span class="at">Task_Type =</span> <span class="fu">as.factor</span>(<span class="fu">case_when</span>(</span>
+<span id="cb8-10"><a href="data-preparation-i.html#cb8-10" tabindex="-1"></a>    <span class="fu">startsWith</span>(Task, <span class="st">&quot;FlankerList&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Flanker&quot;</span>,</span>
+<span id="cb8-11"><a href="data-preparation-i.html#cb8-11" tabindex="-1"></a>    <span class="fu">startsWith</span>(Task, <span class="st">&quot;SimonList&quot;</span>)<span class="sc">~</span> <span class="st">&quot;Simon&quot;</span>)),</span>
+<span id="cb8-12"><a href="data-preparation-i.html#cb8-12" tabindex="-1"></a>  <span class="at">Position =</span> POS,</span>
+<span id="cb8-13"><a href="data-preparation-i.html#cb8-13" tabindex="-1"></a>  <span class="at">Congruency =</span> <span class="fu">as.factor</span>(<span class="fu">case_when</span>(</span>
+<span id="cb8-14"><a href="data-preparation-i.html#cb8-14" tabindex="-1"></a>           COMP <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;congruent&quot;</span>,</span>
+<span id="cb8-15"><a href="data-preparation-i.html#cb8-15" tabindex="-1"></a>           COMP <span class="sc">==</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;incongruent&quot;</span>)),</span>
+<span id="cb8-16"><a href="data-preparation-i.html#cb8-16" tabindex="-1"></a>  <span class="at">RT =</span> Target.RT,</span>
+<span id="cb8-17"><a href="data-preparation-i.html#cb8-17" tabindex="-1"></a>  <span class="at">ACC =</span> Target.ACC,</span>
+<span id="cb8-18"><a href="data-preparation-i.html#cb8-18" tabindex="-1"></a>  <span class="at">Congruency_N_1 =</span> <span class="fu">lag</span>(Congruency),</span>
+<span id="cb8-19"><a href="data-preparation-i.html#cb8-19" tabindex="-1"></a>  <span class="at">ACC_N_1 =</span> <span class="fu">lag</span>(ACC)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-20"><a href="data-preparation-i.html#cb8-20" tabindex="-1"></a>    <span class="fu">group_by</span>(Block, Subject) <span class="sc">%&gt;%</span></span>
+<span id="cb8-21"><a href="data-preparation-i.html#cb8-21" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">BlockTrialNr =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb8-22"><a href="data-preparation-i.html#cb8-22" tabindex="-1"></a>    ungroup <span class="sc">%&gt;%</span></span>
+<span id="cb8-23"><a href="data-preparation-i.html#cb8-23" tabindex="-1"></a>    <span class="fu">select</span>(Subject, Block, Task, Task_Type, Colour, Flanker, Position,</span>
+<span id="cb8-24"><a href="data-preparation-i.html#cb8-24" tabindex="-1"></a>  Target, ITIDuration, Congruency, Congruency_N_1, BlockTrialNr, RT, ACC,</span>
+<span id="cb8-25"><a href="data-preparation-i.html#cb8-25" tabindex="-1"></a>  ACC_N_1)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="import-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-preparation-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-Data_prep_1.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

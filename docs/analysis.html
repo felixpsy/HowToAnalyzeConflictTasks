@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Analysis | A Beginners Guide on How to Analyse Conflict Tasks</title>
+  <meta name="description" content="Chapter 4 Analysis | A Beginners Guide on How to Analyse Conflict Tasks" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Analysis | A Beginners Guide on How to Analyse Conflict Tasks" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Analysis | A Beginners Guide on How to Analyse Conflict Tasks" />
+  
+  
+  
+
+<meta name="author" content="Felix Cramer" />
+
+
+<meta name="date" content="2025-06-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-preparation-ii.html"/>
+<link rel="next" href="basic-visualisation-ideas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#previous-experience-in-r"><i class="fa fa-check"></i>Previous Experience in R</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#coding-style"><i class="fa fa-check"></i>Coding Style</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#content-overview"><i class="fa fa-check"></i>Content Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="import-data.html"><a href="import-data.html"><i class="fa fa-check"></i><b>1</b> Import Data</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="import-data.html"><a href="import-data.html#set-directory-to-file-path"><i class="fa fa-check"></i><b>1.1</b> Set directory to file path</a></li>
+<li class="chapter" data-level="1.2" data-path="import-data.html"><a href="import-data.html#import-files"><i class="fa fa-check"></i><b>1.2</b> Import files</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="import-data.html"><a href="import-data.html#import-csv-files"><i class="fa fa-check"></i><b>1.2.1</b> Import csv files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-preparation-i.html"><a href="data-preparation-i.html"><i class="fa fa-check"></i><b>2</b> Data Preparation I</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-preparation-i.html"><a href="data-preparation-i.html#select-relevant-variables"><i class="fa fa-check"></i><b>2.1</b> Select Relevant Variables</a></li>
+<li class="chapter" data-level="2.2" data-path="data-preparation-i.html"><a href="data-preparation-i.html#create-new-variables"><i class="fa fa-check"></i><b>2.2</b> Create New Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="data-preparation-i.html"><a href="data-preparation-i.html#factorize-variables"><i class="fa fa-check"></i><b>2.3</b> Factorize variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-preparation-i.html"><a href="data-preparation-i.html#tidyverse"><i class="fa fa-check"></i><b>2.4</b> Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html"><i class="fa fa-check"></i><b>3</b> Data Preparation II</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-participants"><i class="fa fa-check"></i><b>3.1</b> Exclusion of participants</a></li>
+<li class="chapter" data-level="3.2" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-trials"><i class="fa fa-check"></i><b>3.2</b> Exclusion of trials</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-outliers"><i class="fa fa-check"></i><b>3.2.1</b> Exclusion of outliers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>4</b> Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analysis.html"><a href="analysis.html#t-test"><i class="fa fa-check"></i><b>4.1</b> t-test</a></li>
+<li class="chapter" data-level="4.2" data-path="analysis.html"><a href="analysis.html#anova"><i class="fa fa-check"></i><b>4.2</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3" data-path="analysis.html"><a href="analysis.html#mixed-effect-models-lmms-glmms"><i class="fa fa-check"></i><b>4.3</b> Mixed-Effect Models (LMMs/ GLMMs)</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="analysis.html"><a href="analysis.html#building-models-adding-random-effects"><i class="fa fa-check"></i><b>4.3.1</b> Building models: Adding random effects</a></li>
+<li class="chapter" data-level="4.3.2" data-path="analysis.html"><a href="analysis.html#testing-models"><i class="fa fa-check"></i><b>4.3.2</b> Testing models</a></li>
+<li class="chapter" data-level="4.3.3" data-path="analysis.html"><a href="analysis.html#fitting-issues"><i class="fa fa-check"></i><b>4.3.3</b> Fitting issues</a></li>
+<li class="chapter" data-level="4.3.4" data-path="analysis.html"><a href="analysis.html#stepwise-model-selection-pipeline"><i class="fa fa-check"></i><b>4.3.4</b> Stepwise model selection pipeline</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="analysis.html"><a href="analysis.html#bayesian-approaches"><i class="fa fa-check"></i><b>4.4</b> Bayesian Approaches</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="analysis.html"><a href="analysis.html#bayesian-hypothesis-tests"><i class="fa fa-check"></i><b>4.4.1</b> Bayesian Hypothesis Tests</a></li>
+<li class="chapter" data-level="4.4.2" data-path="analysis.html"><a href="analysis.html#bayesian-model-comparison"><i class="fa fa-check"></i><b>4.4.2</b> Bayesian model comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="analysis.html"><a href="analysis.html#drift-diffusion-modeling"><i class="fa fa-check"></i><b>4.5</b> Drift Diffusion Modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html"><i class="fa fa-check"></i><b>5</b> Basic Visualisation Ideas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#interaction-plots"><i class="fa fa-check"></i><b>5.1</b> Interaction Plots</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#base-r-option"><i class="fa fa-check"></i><b>5.1.1</b> Base R Option</a></li>
+<li class="chapter" data-level="5.1.2" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#ggplot2-option"><i class="fa fa-check"></i><b>5.1.2</b> ggplot2 Option</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#barplots"><i class="fa fa-check"></i><b>5.2</b> Barplots</a></li>
+<li class="chapter" data-level="5.3" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#density-plots"><i class="fa fa-check"></i><b>5.3</b> Density Plots</a></li>
+<li class="chapter" data-level="5.4" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#combined-plots"><i class="fa fa-check"></i><b>5.4</b> Combined Plots</a></li>
+<li class="chapter" data-level="5.5" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#plotting-mean-differences"><i class="fa fa-check"></i><b>5.5</b> Plotting mean differences</a></li>
+<li class="chapter" data-level="5.6" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#final-notes-on-graphics"><i class="fa fa-check"></i><b>5.6</b> Final notes on graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="specific-effects.html"><a href="specific-effects.html"><i class="fa fa-check"></i><b>6</b> Specific Effects</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="specific-effects.html"><a href="specific-effects.html#ces"><i class="fa fa-check"></i><b>6.1</b> CEs</a></li>
+<li class="chapter" data-level="6.2" data-path="specific-effects.html"><a href="specific-effects.html#get-dat-as-dataframe-correctly"><i class="fa fa-check"></i><b>6.2</b> get dat as dataframe correctly</a></li>
+<li class="chapter" data-level="6.3" data-path="specific-effects.html"><a href="specific-effects.html#step-1-prepare-dataframes-for-acc-and-rt"><i class="fa fa-check"></i><b>6.3</b> Step 1: prepare dataframes for ACC and RT</a></li>
+<li class="chapter" data-level="6.4" data-path="specific-effects.html"><a href="specific-effects.html#step-2"><i class="fa fa-check"></i><b>6.4</b> Step 2</a></li>
+<li class="chapter" data-level="6.5" data-path="specific-effects.html"><a href="specific-effects.html#step-3"><i class="fa fa-check"></i><b>6.5</b> Step 3</a></li>
+<li class="chapter" data-level="6.6" data-path="specific-effects.html"><a href="specific-effects.html#cses"><i class="fa fa-check"></i><b>6.6</b> CSEs</a></li>
+<li class="chapter" data-level="6.7" data-path="specific-effects.html"><a href="specific-effects.html#mixing-costs-und-switching-costs"><i class="fa fa-check"></i><b>6.7</b> Mixing Costs und Switching Costs</a></li>
+<li class="chapter" data-level="6.8" data-path="specific-effects.html"><a href="specific-effects.html#task-switching"><i class="fa fa-check"></i><b>6.8</b> Task Switching</a></li>
+<li class="chapter" data-level="6.9" data-path="specific-effects.html"><a href="specific-effects.html#post-error-slowing"><i class="fa fa-check"></i><b>6.9</b> Post-error Slowing</a></li>
+<li class="chapter" data-level="6.10" data-path="specific-effects.html"><a href="specific-effects.html#delta-plots"><i class="fa fa-check"></i><b>6.10</b> Delta Plots</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Beginners Guide on How to Analyse Conflict Tasks</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analysis" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Analysis<a href="analysis.html#analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This chapter outlines common approaches for analyzing data from conflict tasks. With so many options available, it’s easy to feel overwhelmed.</p>
+<p>For bachelor theses, you best stick to statistical tests you are already familiar with. In most cases, this will be an ANOVA, and occasionally a t-test (e.g., for comparing difference scores). There is no need to test assumptions for these procedures, as even extreme deviations (which are not likely for RT or error data) are unproblematic due to the Central Limit Theorem.</p>
+<p>For master theses, you might consider exploring more advanced methods like mixed-effects models (LMMs/ GLMMs).</p>
+<p>That said, if you are curious to try out other analyses, go for it!</p>
+<div id="t-test" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> t-test<a href="analysis.html#t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can use a t-test to compare mean differences (in reaction times or error rates) between two groups or conditions. The example below shows how to run a paired t-test for the Congruency Effect (CE):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="analysis.html#cb1-1" tabindex="-1"></a><span class="co"># aggregate first on participant level</span></span>
+<span id="cb1-2"><a href="analysis.html#cb1-2" tabindex="-1"></a>agg.t <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Subject <span class="sc">+</span> Congruency, datRT, mean)</span>
+<span id="cb1-3"><a href="analysis.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="analysis.html#cb1-4" tabindex="-1"></a><span class="co"># formula using two vectors</span></span>
+<span id="cb1-5"><a href="analysis.html#cb1-5" tabindex="-1"></a><span class="fu">t.test</span>(agg.t<span class="sc">$</span>RT[agg.t<span class="sc">$</span>Congruency <span class="sc">==</span> <span class="st">&quot;incongruent&quot;</span>], </span>
+<span id="cb1-6"><a href="analysis.html#cb1-6" tabindex="-1"></a>       agg.t<span class="sc">$</span>RT[agg.t<span class="sc">$</span>Congruency <span class="sc">==</span> <span class="st">&quot;congruent&quot;</span>], </span>
+<span id="cb1-7"><a href="analysis.html#cb1-7" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-8"><a href="analysis.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="analysis.html#cb1-9" tabindex="-1"></a><span class="co"># formula using a dataframe (this can cause problems sometimes when </span></span>
+<span id="cb1-10"><a href="analysis.html#cb1-10" tabindex="-1"></a><span class="co"># setting paired == TRUE !)</span></span>
+<span id="cb1-11"><a href="analysis.html#cb1-11" tabindex="-1"></a><span class="fu">t.test</span>(RT <span class="sc">~</span> Congruency, agg.t, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="anova" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> ANOVA<a href="analysis.html#anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use an ANOVA when comparing means (e.g., RT or error rates) across more than two groups or conditions. It is highly recommended to use functions like <code>rstatix::anova_test()</code>) or <code>ez::ezANOVA()</code>, as the base R implementation <code>aov()</code> can be less intuitive. Base R often produces less accessible output and can lead to errors if you don’t properly factorize all relevant variables (e.g., Subject and categorical independent variables), or if contrast settings are incorrectly specified.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="analysis.html#cb2-1" tabindex="-1"></a><span class="co"># regardless of the option, aggregate your data first on participant level</span></span>
+<span id="cb2-2"><a href="analysis.html#cb2-2" tabindex="-1"></a>agg.aov <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Subject <span class="sc">+</span> Congruency <span class="sc">+</span> Congruency_N_1, datRT, mean)</span>
+<span id="cb2-3"><a href="analysis.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="analysis.html#cb2-4" tabindex="-1"></a><span class="do">## option from the rstatix package</span></span>
+<span id="cb2-5"><a href="analysis.html#cb2-5" tabindex="-1"></a><span class="fu">library</span>(rstatix)</span>
+<span id="cb2-6"><a href="analysis.html#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="analysis.html#cb2-7" tabindex="-1"></a>aov.results <span class="ot">&lt;-</span> <span class="fu">anova_test</span>(</span>
+<span id="cb2-8"><a href="analysis.html#cb2-8" tabindex="-1"></a>  <span class="at">data =</span> agg.aov,</span>
+<span id="cb2-9"><a href="analysis.html#cb2-9" tabindex="-1"></a>  <span class="at">dv =</span> RT, <span class="co"># dependent variable</span></span>
+<span id="cb2-10"><a href="analysis.html#cb2-10" tabindex="-1"></a>  <span class="at">wid =</span> Subject, <span class="co"># this has to be set</span></span>
+<span id="cb2-11"><a href="analysis.html#cb2-11" tabindex="-1"></a>  <span class="at">within =</span> <span class="fu">c</span>(Congruency, Congruency_N_1),</span>
+<span id="cb2-12"><a href="analysis.html#cb2-12" tabindex="-1"></a> <span class="co"># between = (...),  if you also have between factors</span></span>
+<span id="cb2-13"><a href="analysis.html#cb2-13" tabindex="-1"></a>  <span class="at">type =</span> <span class="dv">2</span> </span>
+<span id="cb2-14"><a href="analysis.html#cb2-14" tabindex="-1"></a> <span class="co"># set type = 2, google ANOVA sum of squares types if you are further interested :)</span></span>
+<span id="cb2-15"><a href="analysis.html#cb2-15" tabindex="-1"></a>)</span>
+<span id="cb2-16"><a href="analysis.html#cb2-16" tabindex="-1"></a><span class="fu">get_anova_table</span>(aov.results)</span>
+<span id="cb2-17"><a href="analysis.html#cb2-17" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="analysis.html#cb2-18" tabindex="-1"></a><span class="do">## Base R option</span></span>
+<span id="cb2-19"><a href="analysis.html#cb2-19" tabindex="-1"></a><span class="co"># factorize variables (including subject)</span></span>
+<span id="cb2-20"><a href="analysis.html#cb2-20" tabindex="-1"></a>agg.aov<span class="sc">$</span>Congruency <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(agg.aov<span class="sc">$</span>Congruency)</span>
+<span id="cb2-21"><a href="analysis.html#cb2-21" tabindex="-1"></a>agg.aov<span class="sc">$</span>Congruency_N_1 <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(agg.aov<span class="sc">$</span>Congruency_N_1)</span>
+<span id="cb2-22"><a href="analysis.html#cb2-22" tabindex="-1"></a>agg.aov<span class="sc">$</span>Subject <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(agg.aov<span class="sc">$</span>Subject)</span>
+<span id="cb2-23"><a href="analysis.html#cb2-23" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="analysis.html#cb2-24" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(RT <span class="sc">~</span> Congruency <span class="sc">*</span> Congruency_N_1 <span class="sc">+</span> </span>
+<span id="cb2-25"><a href="analysis.html#cb2-25" tabindex="-1"></a>              <span class="fu">Error</span>(Subject<span class="sc">/</span>(Congruency <span class="sc">*</span> Congruency_N_1)), </span>
+<span id="cb2-26"><a href="analysis.html#cb2-26" tabindex="-1"></a>            <span class="at">data=</span>agg.aov))</span></code></pre></div>
+</div>
+<div id="mixed-effect-models-lmms-glmms" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Mixed-Effect Models (LMMs/ GLMMs)<a href="analysis.html#mixed-effect-models-lmms-glmms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mixed-effects models have become increasingly popular due to their methodological advantages over traditional linear models like an ANOVA. By adding random effects, these models offer a powerful—though sometimes complex—approach to analyzing data.</p>
+<p>Consider the congruency sequence effect (CSE) as an example: a standard 2×2 ANOVA tests previous × current congruency (congruent vs. incongruent) as fixed effects, aggregating means across participants. However, this ignores meaningful variability in CSEs across participants. Mixed-effects models allow you to capture this variability by including random effects.</p>
+<p><a href="https://doi.org/10.1016/j.jml.2020.104092">Meteyard &amp; Davies (2020)</a> provide an excellent introduction on the manner. Before proceeding, make sure you understand the concepts of random intercepts and random slopes.</p>
+<p>This section begins with an introduction to building mixed-effects models, with a focus on setting up random effects. Next, it looks into model selection using likelihood ratio tests (F-tests). Then a practical model reduction workflow in R using the <code>lmertest</code> package will be outlined. Finally, the section addresses common fitting issues and offers pragmatic strategies for resolving them.</p>
+<div id="building-models-adding-random-effects" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Building models: Adding random effects<a href="analysis.html#building-models-adding-random-effects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While the fixed effects structure typically follows the logic of a standard ANOVA (i.e., specifying each independent variable as fixed effect), determining random effects is less straightforward. So what random effects should you add?</p>
+<p>Some authors argue for including all justified random intercepts and slopes in order to ‘keep it maximal’ (<a href="https://doi.org/10.1016/j.jml.2012.11.001">Barr et al., 2013</a>), whereas others recommend a more parsimonious, data-driven approach to avoid overparameterization and convergence issues (‘keep it minimal’, e.g., <a href="https://doi.org/10.1016/j.jml.2017.01.001">Matuschek et al., 2017</a>).</p>
+<p>This book suggests the pragmatic strategy to aim for a full model (all theoretically justified random effects), but reduce the random effects structure if there is good reason to do so.</p>
+<div id="adding-random-intercepts" class="section level4 hasAnchor" number="4.3.1.1">
+<h4><span class="header-section-number">4.3.1.1</span> Adding random intercepts<a href="analysis.html#adding-random-intercepts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We start by adding random intercepts for any unit that causes non-independence in the data (usually participants, sometimes also items).</p>
+<p>Here simplified with participants as unit of random variability.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="analysis.html#cb3-1" tabindex="-1"></a><span class="co"># load lme4 package</span></span>
+<span id="cb3-2"><a href="analysis.html#cb3-2" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb3-3"><a href="analysis.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="analysis.html#cb3-4" tabindex="-1"></a><span class="do">## LMM: RT</span></span>
+<span id="cb3-5"><a href="analysis.html#cb3-5" tabindex="-1"></a><span class="co"># add random intercept for subjects to an intercept-only model</span></span>
+<span id="cb3-6"><a href="analysis.html#cb3-6" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-7"><a href="analysis.html#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="analysis.html#cb3-8" tabindex="-1"></a><span class="do">## GLMM: Accuracy</span></span>
+<span id="cb3-9"><a href="analysis.html#cb3-9" tabindex="-1"></a><span class="co"># add random intercept for subjects to an intercept-only model</span></span>
+<span id="cb3-10"><a href="analysis.html#cb3-10" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">glmer</span>(ACC <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), <span class="at">data=</span>datACC, <span class="at">family=</span>binomial)</span></code></pre></div>
+<p>Besides fitting a model with only random intercepts, you can also fit a model that includes the random intercepts along with all fixed effects of interest. If both models converge without issues, you can proceed by adding random slopes. If the second model fails to converge, first verify that the model is correctly specified. If problems persist, consider falling back to a traditional ANOVA.</p>
+<p>For RT data analyzed with linear mixed-effects models (LMMs), including just random intercepts typically yields substantial between-subject variability and results in stable models (when working with up to 2–3 fixed effects and their interactions). For error rate (ER) data, however, fitting generalized linear mixed models (GLMMs) may be more problematic, often due to overall high accuracy.</p>
+</div>
+<div id="adding-random-slopes" class="section level4 hasAnchor" number="4.3.1.2">
+<h4><span class="header-section-number">4.3.1.2</span> Adding random slopes<a href="analysis.html#adding-random-slopes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>While random intercepts capture baseline differences across subjects (i.e., different overall RT means), random slopes account for variability in the effects (e.g., the magnitude of a switch costs reduction might vary between subjects).</p>
+<p>Theoretically, ignoring random slopes could increase type I errors (<a href="https://psych.wisc.edu/Brauer/BrauerLab/wp-content/uploads/2014/04/Brauer-and-Curtin-in-press-Psych-Methods.pdf">Brauer &amp; Curtin, 2018</a>) by overestimating fixed effects.</p>
+<p>Practically, random slopes for the effects we are interested in are <em>usually</em> very small (if existent), but they increase the model complexity. For instance, including random slopes increases the number of model parameters, as covariances between random effects are also computed.</p>
+<p>Try to add random slopes one by one, and check for convergence or other fitting issues. The rule of thumb is easy: add a random slope term for every within-subjects predictor - don’t add random slopes for any between-subjects fixed effects.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="analysis.html#cb4-1" tabindex="-1"></a><span class="co"># add random slopes for within-subjects variables</span></span>
+<span id="cb4-2"><a href="analysis.html#cb4-2" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> Cong <span class="sc">+</span> Cong_N_1 <span class="sc">|</span> Subject), <span class="at">data=</span>dat2, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>If your model converges successfully at this stage, you can proceed to the next section on specifying interactions among random slopes.</p>
+<p>If issues persist, it might be advisable to revert to a simpler model with random intercepts only.</p>
+</div>
+<div id="maximal-random-structure-interactions" class="section level4 hasAnchor" number="4.3.1.3">
+<h4><span class="header-section-number">4.3.1.3</span> Maximal random structure (interactions)<a href="analysis.html#maximal-random-structure-interactions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To obtain a maximal random effect structure, you need to include also full interaction terms of random slopes. Note that such models are computationally heavy and often suffer from convergence issues.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="analysis.html#cb5-1" tabindex="-1"></a><span class="do">## Step 3</span></span>
+<span id="cb5-2"><a href="analysis.html#cb5-2" tabindex="-1"></a><span class="co"># add interactions as random slopes by-subject</span></span>
+<span id="cb5-3"><a href="analysis.html#cb5-3" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> Cong<span class="sc">*</span>Cong_N_1 <span class="sc">|</span> Subject), <span class="at">data=</span>dat2, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-4"><a href="analysis.html#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="analysis.html#cb5-5" tabindex="-1"></a><span class="co"># if you face convergence issues, you might want to include only the random slope</span></span>
+<span id="cb5-6"><a href="analysis.html#cb5-6" tabindex="-1"></a><span class="co"># for the highest order interaction, written as (1 + Cong:Cong_N_1| Subject), see </span></span>
+<span id="cb5-7"><a href="analysis.html#cb5-7" tabindex="-1"></a><span class="co"># Barr et al. (2013)</span></span></code></pre></div>
+</div>
+</div>
+<div id="testing-models" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Testing models<a href="analysis.html#testing-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that the random effects structure is specified, we proceed with a stepwise, hierarchical model comparison using likelihood ratio tests (LRTs). This approach involves sequentially comparing nested models, starting from the most complex (full) model, by systematically removing predictors. At each step, the goal is to identify whether the removal of a term significantly reduces model fit. This allows us to find the model with the best to the data.</p>
+<p>To find the best-fitting model, begin by testing and selecting the appropriate random effects structure. Once the optimal random structure is established, proceed with comparing fixed effects. Note that for valid model comparisons using likelihood ratio tests, the models must share either the same random effects or the same fixed effects structure.</p>
+<p>You can find example code for a LRT decision below:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="analysis.html#cb6-1" tabindex="-1"></a><span class="co"># build full model with interaction of random slopes</span></span>
+<span id="cb6-2"><a href="analysis.html#cb6-2" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> Congruency<span class="sc">*</span>Congruency_N_1<span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-3"><a href="analysis.html#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="analysis.html#cb6-4" tabindex="-1"></a><span class="co"># build reduced model with only the random slopes</span></span>
+<span id="cb6-5"><a href="analysis.html#cb6-5" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> Congruency <span class="sc">+</span> Congruency_N_1<span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-6"><a href="analysis.html#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="analysis.html#cb6-7" tabindex="-1"></a><span class="co"># test the full against the reduced model</span></span>
+<span id="cb6-8"><a href="analysis.html#cb6-8" tabindex="-1"></a><span class="fu">anova</span>(m1, m2)</span>
+<span id="cb6-9"><a href="analysis.html#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="analysis.html#cb6-10" tabindex="-1"></a><span class="co"># &gt; anova(m1, m2)</span></span>
+<span id="cb6-11"><a href="analysis.html#cb6-11" tabindex="-1"></a><span class="co"># Data: datRT</span></span>
+<span id="cb6-12"><a href="analysis.html#cb6-12" tabindex="-1"></a><span class="co"># Models:</span></span>
+<span id="cb6-13"><a href="analysis.html#cb6-13" tabindex="-1"></a><span class="co"># m2: RT ~ 1 + (1 + Congruency + Congruency_N_1 | Subject)</span></span>
+<span id="cb6-14"><a href="analysis.html#cb6-14" tabindex="-1"></a><span class="co"># m1: RT ~ 1 + (1 + Congruency * Congruency_N_1 | Subject)</span></span>
+<span id="cb6-15"><a href="analysis.html#cb6-15" tabindex="-1"></a><span class="co"># npar   AIC   BIC logLik deviance  Chisq Df Pr(&gt;Chisq)    </span></span>
+<span id="cb6-16"><a href="analysis.html#cb6-16" tabindex="-1"></a><span class="co"># m2    8 31211 31258 -15598    31195                         </span></span>
+<span id="cb6-17"><a href="analysis.html#cb6-17" tabindex="-1"></a><span class="co"># m1   12 31139 31210 -15558    31115 79.945  4  &lt; 2.2e-16 ***</span></span>
+<span id="cb6-18"><a href="analysis.html#cb6-18" tabindex="-1"></a><span class="co">#   ---</span></span>
+<span id="cb6-19"><a href="analysis.html#cb6-19" tabindex="-1"></a><span class="co">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
+<span id="cb6-20"><a href="analysis.html#cb6-20" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="analysis.html#cb6-21" tabindex="-1"></a><span class="co"># -&gt; m1 provides the better model fit</span></span></code></pre></div>
+<p>For another example, suppose we are modeling three fixed effects with a random intercept. The formula <code>RT ~ Congruency*Task_Type*Proportion_Congruency</code> implicitly includes all main effects and interactions. However, for stepwise model comparison, it is best to explicitly specify each term.</p>
+<p>Let us assume that only the two-way interaction between Congruency and Task_Type is supported by the data. The model selection process would look like this:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="analysis.html#cb7-1" tabindex="-1"></a><span class="co"># full model with all effects</span></span>
+<span id="cb7-2"><a href="analysis.html#cb7-2" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> Congruency <span class="sc">+</span> Task_Type <span class="sc">+</span> Proportion_Congruency</span>
+<span id="cb7-3"><a href="analysis.html#cb7-3" tabindex="-1"></a>                   <span class="sc">+</span> Congruency<span class="sc">:</span>Task_Type</span>
+<span id="cb7-4"><a href="analysis.html#cb7-4" tabindex="-1"></a>                   <span class="sc">+</span> Congruency<span class="sc">:</span>Proportion_Congruency</span>
+<span id="cb7-5"><a href="analysis.html#cb7-5" tabindex="-1"></a>                   <span class="sc">+</span> Task_Type<span class="sc">:</span>Proportion_Congruency</span>
+<span id="cb7-6"><a href="analysis.html#cb7-6" tabindex="-1"></a>                   <span class="sc">+</span> Congruency<span class="sc">:</span>Task_Type<span class="sc">:</span>Proportion_Congruency </span>
+<span id="cb7-7"><a href="analysis.html#cb7-7" tabindex="-1"></a>                   <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-8"><a href="analysis.html#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="analysis.html#cb7-9" tabindex="-1"></a><span class="co"># reduced model with only two-way interactions</span></span>
+<span id="cb7-10"><a href="analysis.html#cb7-10" tabindex="-1"></a>all_two_way_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> Congruency <span class="sc">+</span> Task_Type <span class="sc">+</span> Proportion_Congruency</span>
+<span id="cb7-11"><a href="analysis.html#cb7-11" tabindex="-1"></a>                   <span class="sc">+</span> Congruency<span class="sc">:</span>Task_Type</span>
+<span id="cb7-12"><a href="analysis.html#cb7-12" tabindex="-1"></a>                   <span class="sc">+</span> Congruency<span class="sc">:</span>Proportion_Congruency</span>
+<span id="cb7-13"><a href="analysis.html#cb7-13" tabindex="-1"></a>                   <span class="sc">+</span> Task_Type<span class="sc">:</span>Proportion_Congruency</span>
+<span id="cb7-14"><a href="analysis.html#cb7-14" tabindex="-1"></a>                   <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-15"><a href="analysis.html#cb7-15" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="analysis.html#cb7-16" tabindex="-1"></a><span class="co"># compare the models</span></span>
+<span id="cb7-17"><a href="analysis.html#cb7-17" tabindex="-1"></a><span class="fu">anova</span>(full_model, all_two_way_model)</span>
+<span id="cb7-18"><a href="analysis.html#cb7-18" tabindex="-1"></a><span class="co"># → not significant, keep all_two_way_model</span></span>
+<span id="cb7-19"><a href="analysis.html#cb7-19" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="analysis.html#cb7-20" tabindex="-1"></a><span class="co"># further reduced model with only two two-way interactions</span></span>
+<span id="cb7-21"><a href="analysis.html#cb7-21" tabindex="-1"></a>two_two_way_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> Congruency <span class="sc">+</span> Task_Type <span class="sc">+</span> Proportion_Congruency</span>
+<span id="cb7-22"><a href="analysis.html#cb7-22" tabindex="-1"></a>                          <span class="sc">+</span> Congruency<span class="sc">:</span>Task_Type</span>
+<span id="cb7-23"><a href="analysis.html#cb7-23" tabindex="-1"></a>                          <span class="sc">+</span> Congruency<span class="sc">:</span>Proportion_Congruency</span>
+<span id="cb7-24"><a href="analysis.html#cb7-24" tabindex="-1"></a>                          <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-25"><a href="analysis.html#cb7-25" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="analysis.html#cb7-26" tabindex="-1"></a><span class="co"># compare the models</span></span>
+<span id="cb7-27"><a href="analysis.html#cb7-27" tabindex="-1"></a><span class="fu">anova</span>(all_two_way_model, two_two_way_model)</span>
+<span id="cb7-28"><a href="analysis.html#cb7-28" tabindex="-1"></a><span class="co"># → not significant, keep two_two_way_model</span></span>
+<span id="cb7-29"><a href="analysis.html#cb7-29" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="analysis.html#cb7-30" tabindex="-1"></a><span class="co"># further reduce and fit model with only one two-way interactions</span></span>
+<span id="cb7-31"><a href="analysis.html#cb7-31" tabindex="-1"></a>one_two_way_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> Congruency <span class="sc">+</span> Task_Type <span class="sc">+</span> Proportion_Congruency</span>
+<span id="cb7-32"><a href="analysis.html#cb7-32" tabindex="-1"></a>                          <span class="sc">+</span> Congruency<span class="sc">:</span>Task_Type</span>
+<span id="cb7-33"><a href="analysis.html#cb7-33" tabindex="-1"></a>                          <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-34"><a href="analysis.html#cb7-34" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="analysis.html#cb7-35" tabindex="-1"></a><span class="co"># compare the models</span></span>
+<span id="cb7-36"><a href="analysis.html#cb7-36" tabindex="-1"></a><span class="fu">anova</span>(all_two_way_model, two_two_way_model)</span>
+<span id="cb7-37"><a href="analysis.html#cb7-37" tabindex="-1"></a><span class="co"># → significant, keep one_two_way_model</span></span></code></pre></div>
+<p>However, model comparisons using likelihood ratio tests (LRTs) should always be accompanied by careful model diagnostics. For example, in the earlier model m1, the warning <code>boundary (singular) fit: see help('isSingular')</code> suggests potential issues with the model’s structure. This will be addressed in the next section.</p>
+</div>
+<div id="fitting-issues" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Fitting issues<a href="analysis.html#fitting-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A comprehensive treatment of all fitting issues is beyond the scope of this book (and, frankly, beyond the knowledge of its author). However, some common problems are worth noting:</p>
+<ul>
+<li><p>Warnings: such as <code>Fixed-effect model matrix is rank deficient so dropping 1 column / coefficient</code> or <code>boundary (singular) fit: see help('isSingular')</code> might (but not must!) indicate over-fitting (e.g., random effects that explain almost 0 variance, too many parameters, or few observations per cell). Warnings are not always a fatal issue. Sometimes they just indicate small variance components, and the model may still be valid.</p></li>
+<li><p>Multicollinearity: Inspect the correlation structure of random effects using <code>summary()</code>. Very high correlations (close to ±1) may indicate redundancy or overfitting, such as a random slope being largely explained by the intercept. See the following example (I would drop all random slopes here!):</p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="analysis.html#cb8-1" tabindex="-1"></a><span class="co"># get model output</span></span>
+<span id="cb8-2"><a href="analysis.html#cb8-2" tabindex="-1"></a><span class="fu">summary</span>(m1)</span>
+<span id="cb8-3"><a href="analysis.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="analysis.html#cb8-4" tabindex="-1"></a><span class="co"># &gt; summary(m1)</span></span>
+<span id="cb8-5"><a href="analysis.html#cb8-5" tabindex="-1"></a><span class="co"># Linear mixed model fit by maximum likelihood  [&#39;lmerMod&#39;]</span></span>
+<span id="cb8-6"><a href="analysis.html#cb8-6" tabindex="-1"></a><span class="co"># Formula: RT ~ 1 + (1 + Congruency * Congruency_N_1 | Subject)</span></span>
+<span id="cb8-7"><a href="analysis.html#cb8-7" tabindex="-1"></a><span class="co"># Data: datRT</span></span>
+<span id="cb8-8"><a href="analysis.html#cb8-8" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb8-9"><a href="analysis.html#cb8-9" tabindex="-1"></a><span class="co">#      AIC      BIC   logLik deviance df.resid </span></span>
+<span id="cb8-10"><a href="analysis.html#cb8-10" tabindex="-1"></a><span class="co">#  31139.3  31209.6 -15557.7  31115.3     2578 </span></span>
+<span id="cb8-11"><a href="analysis.html#cb8-11" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb8-12"><a href="analysis.html#cb8-12" tabindex="-1"></a><span class="co"># Scaled residuals: </span></span>
+<span id="cb8-13"><a href="analysis.html#cb8-13" tabindex="-1"></a><span class="co">#     Min      1Q  Median      3Q     Max </span></span>
+<span id="cb8-14"><a href="analysis.html#cb8-14" tabindex="-1"></a><span class="co"># -2.7160 -0.7594 -0.1413  0.6336  3.3641 </span></span>
+<span id="cb8-15"><a href="analysis.html#cb8-15" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb8-16"><a href="analysis.html#cb8-16" tabindex="-1"></a><span class="co"># Random effects:</span></span>
+<span id="cb8-17"><a href="analysis.html#cb8-17" tabindex="-1"></a><span class="co">#  Groups   Name                                            Variance Std.Dev. Corr  </span></span>
+<span id="cb8-18"><a href="analysis.html#cb8-18" tabindex="-1"></a><span class="co">#  Subject  (Intercept)                                     10922    104.51         </span></span>
+<span id="cb8-19"><a href="analysis.html#cb8-19" tabindex="-1"></a><span class="co">#           Congruencyincongruent                            5965     77.23   -0.93 </span></span>
+<span id="cb8-20"><a href="analysis.html#cb8-20" tabindex="-1"></a><span class="co">#           Congruency_N_1incongruent                        1725     41.53   -0.96 1.00</span></span>
+<span id="cb8-21"><a href="analysis.html#cb8-21" tabindex="-1"></a><span class="co">#           Congruencyincongruent:Congruency_N_1incongruent  4974     70.53    0.92 -1.00</span></span></code></pre></div>
+<ul>
+<li>Convergence: if a model fails to converge, refer to the troubleshooting steps outlined in <a href="https://psych.wisc.edu/Brauer/BrauerLab/wp-content/uploads/2014/04/Brauer-and-Curtin-in-press-Psych-Methods.pdf">Brauer &amp; Curtin, 2018</a>, p. 16 Table 17. In most cases, the model is too complex for the available data. But sometimes, changing the default optimizer does the trick.</li>
+</ul>
+</div>
+<div id="stepwise-model-selection-pipeline" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Stepwise model selection pipeline<a href="analysis.html#stepwise-model-selection-pipeline" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When working with complex models, manually performing each model comparison can be time-consuming and error-prone. This section demonstrates a more efficient pipeline for stepwise model reduction using the <code>lmerTest</code> package, with function <code>step()</code> for LMMs and the function <code>lmerTest::drop1()</code> for GLMMs. Both approaches automate model selection based on likelihood ratio tests.</p>
+<ul>
+<li>Linear Mixed Models (LMMs), for RT data:</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="analysis.html#cb9-1" tabindex="-1"></a><span class="co"># load package</span></span>
+<span id="cb9-2"><a href="analysis.html#cb9-2" tabindex="-1"></a><span class="fu">library</span>(lmerTest)</span>
+<span id="cb9-3"><a href="analysis.html#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="analysis.html#cb9-4" tabindex="-1"></a><span class="co"># fit full model - the most complex model which converges, even with fitting issues</span></span>
+<span id="cb9-5"><a href="analysis.html#cb9-5" tabindex="-1"></a>full.model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> Congruency<span class="sc">*</span>Congruency_N_1<span class="sc">*</span>Task_Type<span class="sc">*</span>Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb9-6"><a href="analysis.html#cb9-6" tabindex="-1"></a>                     (<span class="dv">1</span> <span class="sc">+</span> Congruency<span class="sc">*</span>Congruency_N_1<span class="sc">|</span> Subject), </span>
+<span id="cb9-7"><a href="analysis.html#cb9-7" tabindex="-1"></a>                   <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-8"><a href="analysis.html#cb9-8" tabindex="-1"></a>                   <span class="co"># using the bobyqa optimizer</span></span>
+<span id="cb9-9"><a href="analysis.html#cb9-9" tabindex="-1"></a>                   <span class="at">control =</span> <span class="fu">lmerControl</span>(<span class="at">optimizer =</span> <span class="st">&quot;bobyqa&quot;</span>)) </span>
+<span id="cb9-10"><a href="analysis.html#cb9-10" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="analysis.html#cb9-11" tabindex="-1"></a><span class="co"># perform stepwise backward selection for fixed and random effects</span></span>
+<span id="cb9-12"><a href="analysis.html#cb9-12" tabindex="-1"></a><span class="fu">step</span>(full.model, <span class="at">reduce.fixed =</span> <span class="cn">TRUE</span>, <span class="at">reduce.random =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb9-13"><a href="analysis.html#cb9-13" tabindex="-1"></a>     <span class="at">alpha.fixed =</span>  <span class="fl">0.05</span>, <span class="at">alpha.random =</span>  <span class="fl">0.05</span>)</span>
+<span id="cb9-14"><a href="analysis.html#cb9-14" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="analysis.html#cb9-15" tabindex="-1"></a><span class="co"># fit the model found and inspect it</span></span></code></pre></div>
+<ul>
+<li>Generalized Linear Mixed-Models (GLMMs), for ER data: Unfortunately, <code>step()</code> only works for LMMs. The function <code>drop1()</code> comes close, but does not test random effects automatically and also requires model updates to be done manually after each run.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="analysis.html#cb10-1" tabindex="-1"></a><span class="co"># load package</span></span>
+<span id="cb10-2"><a href="analysis.html#cb10-2" tabindex="-1"></a><span class="fu">library</span>(lmerTest)</span>
+<span id="cb10-3"><a href="analysis.html#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="analysis.html#cb10-4" tabindex="-1"></a><span class="co"># fit full model - but write the effects explicitly for compatibility with drop1()</span></span>
+<span id="cb10-5"><a href="analysis.html#cb10-5" tabindex="-1"></a>full.model <span class="ot">&lt;-</span> <span class="fu">glmer</span>(</span>
+<span id="cb10-6"><a href="analysis.html#cb10-6" tabindex="-1"></a>  ACC <span class="sc">~</span> Congruency <span class="sc">+</span> Congruency_N_1 <span class="sc">+</span> Task_Type <span class="sc">+</span> Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb10-7"><a href="analysis.html#cb10-7" tabindex="-1"></a>    Congruency<span class="sc">:</span>Congruency_N_1 <span class="sc">+</span></span>
+<span id="cb10-8"><a href="analysis.html#cb10-8" tabindex="-1"></a>    Congruency<span class="sc">:</span>Task_Type <span class="sc">+</span></span>
+<span id="cb10-9"><a href="analysis.html#cb10-9" tabindex="-1"></a>    Congruency<span class="sc">:</span>Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb10-10"><a href="analysis.html#cb10-10" tabindex="-1"></a>    Congruency_N_1<span class="sc">:</span>Task_Type <span class="sc">+</span></span>
+<span id="cb10-11"><a href="analysis.html#cb10-11" tabindex="-1"></a>    Congruency_N_1<span class="sc">:</span>Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb10-12"><a href="analysis.html#cb10-12" tabindex="-1"></a>    Task_Type<span class="sc">:</span>Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb10-13"><a href="analysis.html#cb10-13" tabindex="-1"></a>    Congruency<span class="sc">:</span>Congruency_N_1<span class="sc">:</span>Task_Type <span class="sc">+</span></span>
+<span id="cb10-14"><a href="analysis.html#cb10-14" tabindex="-1"></a>    Congruency<span class="sc">:</span>Congruency_N_1<span class="sc">:</span>Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb10-15"><a href="analysis.html#cb10-15" tabindex="-1"></a>    Congruency<span class="sc">:</span>Task_Type<span class="sc">:</span>Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb10-16"><a href="analysis.html#cb10-16" tabindex="-1"></a>    Congruency_N_1<span class="sc">:</span>Task_Type<span class="sc">:</span>Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb10-17"><a href="analysis.html#cb10-17" tabindex="-1"></a>    Congruency<span class="sc">:</span>Congruency_N_1<span class="sc">:</span>Task_Type<span class="sc">:</span>Proportion_Congruency <span class="sc">+</span></span>
+<span id="cb10-18"><a href="analysis.html#cb10-18" tabindex="-1"></a>    (<span class="dv">1</span> <span class="sc">+</span> Congruency <span class="sc">+</span> Congruency_N_1 <span class="sc">|</span> Subject),</span>
+<span id="cb10-19"><a href="analysis.html#cb10-19" tabindex="-1"></a>                   <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span> <span class="st">&quot;bobyqa&quot;</span>),</span>
+<span id="cb10-20"><a href="analysis.html#cb10-20" tabindex="-1"></a>                   <span class="at">family=</span>binomial) </span>
+<span id="cb10-21"><a href="analysis.html#cb10-21" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="analysis.html#cb10-22" tabindex="-1"></a><span class="co"># use drop1 to perform backward selection based on chi2 distribution </span></span>
+<span id="cb10-23"><a href="analysis.html#cb10-23" tabindex="-1"></a><span class="fu">drop1</span>(full.model, <span class="at">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span>
+<span id="cb10-24"><a href="analysis.html#cb10-24" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="analysis.html#cb10-25" tabindex="-1"></a><span class="co"># so continue using the drop1 function with the model found, until no term gets </span></span>
+<span id="cb10-26"><a href="analysis.html#cb10-26" tabindex="-1"></a><span class="co"># dropped anymore</span></span>
+<span id="cb10-27"><a href="analysis.html#cb10-27" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="analysis.html#cb10-28" tabindex="-1"></a><span class="co"># fit the model found then and inspect it</span></span></code></pre></div>
+</div>
+</div>
+<div id="bayesian-approaches" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Bayesian Approaches<a href="analysis.html#bayesian-approaches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Although many Bayesian statisticians might disagree, the Bayesian framework is not superior to frequentist statistics in general. However, for certain research questions, it can be useful to quantify the relative evidence for competing hypotheses. For this reason, this chapter focuses on Bayesian hypothesis testing using the Bayes Factor. Although the Bayesian and frequentist approaches differ in their philosophical foundations and methods, Bayes Factor testing works quite similar to null hypothesis significance testing.</p>
+<p>Technically speaking, the Bayes factor represents the ratio of two marginal likelihoods: the likelihood of the data under hypothesis H1 divided by the likelihood of the data under hypothesis H2. Thus, the Bayes factor can indicate three possible test decisions: evidence in favor of H1, evidence in favor of H2, or insufficient evidence to favor either hypothesis. See the table below on how to interpret the Bayes Factor.</p>
+<p>Interpretation of the Bayes Factor (from Jeffreys, 1961):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Bayes Factor (BF₁₂)</th>
+<th align="center">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">&gt; 100</td>
+<td align="center">Extreme evidence for H₁</td>
+</tr>
+<tr class="even">
+<td align="center">30 – 100</td>
+<td align="center">Very strong evidence for H₁</td>
+</tr>
+<tr class="odd">
+<td align="center">10 – 30</td>
+<td align="center">Strong evidence for H₁</td>
+</tr>
+<tr class="even">
+<td align="center">3 – 10</td>
+<td align="center">Moderate evidence for H₁</td>
+</tr>
+<tr class="odd">
+<td align="center">1 – 3</td>
+<td align="center">Anecdotal evidence for H₁</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">No evidence</td>
+</tr>
+<tr class="odd">
+<td align="center">1/3 – 1</td>
+<td align="center">Anecdotal evidence for H₂</td>
+</tr>
+<tr class="even">
+<td align="center">1/10 – 1/3</td>
+<td align="center">Moderate evidence for H₂</td>
+</tr>
+<tr class="odd">
+<td align="center">1/30 – 1/10</td>
+<td align="center">Strong evidence for H₂</td>
+</tr>
+<tr class="even">
+<td align="center">1/100 – 1/30</td>
+<td align="center">Very strong evidence for H₂</td>
+</tr>
+<tr class="odd">
+<td align="center">&lt; 1/100</td>
+<td align="center">Extreme evidence for H₂</td>
+</tr>
+</tbody>
+</table>
+<div id="bayesian-hypothesis-tests" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Bayesian Hypothesis Tests<a href="analysis.html#bayesian-hypothesis-tests" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>With the <a href="https://cran.r-project.org/web/packages/BayesFactor/BayesFactor.pdf">BayesFactor</a> package, you can perform Bayesian analogues to classical ANOVA and t-tests. These tests follow a similar syntax to their frequentist counterparts and are straightforward to implement.</p>
+<p>The package uses default JZS priors with standard scaling factors. Unless you have a strong reason to use own priors, it’s best to stick with these defaults.</p>
+<div id="bayesian-t-test" class="section level4 hasAnchor" number="4.4.1.1">
+<h4><span class="header-section-number">4.4.1.1</span> Bayesian t-Test<a href="analysis.html#bayesian-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The following example computes the Bayes Factor (BF₁₀), quantifying evidence for the alternative hypothesis (H₁) relative to the null hypothesis (H₀).</p>
+<p>The syntax mirrors the base R <code>t.test()</code> function, but returns a Bayes Factor instead of a p-value.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="analysis.html#cb11-1" tabindex="-1"></a><span class="co"># load BayesFactor package</span></span>
+<span id="cb11-2"><a href="analysis.html#cb11-2" tabindex="-1"></a><span class="fu">library</span>(BayesFactor)</span>
+<span id="cb11-3"><a href="analysis.html#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="analysis.html#cb11-4" tabindex="-1"></a><span class="co"># aggregate first on participant level</span></span>
+<span id="cb11-5"><a href="analysis.html#cb11-5" tabindex="-1"></a>agg.t <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Subject <span class="sc">+</span> Congruency, datRT, mean)</span>
+<span id="cb11-6"><a href="analysis.html#cb11-6" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="analysis.html#cb11-7" tabindex="-1"></a><span class="co"># perform paired t-test (with vector-based formular)</span></span>
+<span id="cb11-8"><a href="analysis.html#cb11-8" tabindex="-1"></a><span class="fu">ttestBF</span>(<span class="at">x =</span> agg.t<span class="sc">$</span>RT[agg.t<span class="sc">$</span>Congruency <span class="sc">==</span> <span class="st">&quot;incongruent&quot;</span>],</span>
+<span id="cb11-9"><a href="analysis.html#cb11-9" tabindex="-1"></a>        <span class="at">y =</span> agg.t<span class="sc">$</span>RT[agg.t<span class="sc">$</span>Congruency <span class="sc">==</span> <span class="st">&quot;congruent&quot;</span>], <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="bayesian-anova" class="section level4 hasAnchor" number="4.4.1.2">
+<h4><span class="header-section-number">4.4.1.2</span> Bayesian ANOVA<a href="analysis.html#bayesian-anova" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The BayesFactor package offers Bayes Factor calculation for a range of experimental designs. The following example shows how to perform a Bayesian repeated measures two-way ANOVA. The function returns a Bayes Factor for each main effect and interaction, quantifying the strength of evidence for each model relative to the null model (which includes only random subject effects).</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="analysis.html#cb12-1" tabindex="-1"></a><span class="co"># load BayesFactor package</span></span>
+<span id="cb12-2"><a href="analysis.html#cb12-2" tabindex="-1"></a><span class="fu">library</span>(BayesFactor)</span>
+<span id="cb12-3"><a href="analysis.html#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="analysis.html#cb12-4" tabindex="-1"></a><span class="co"># aggregate first on participant level</span></span>
+<span id="cb12-5"><a href="analysis.html#cb12-5" tabindex="-1"></a>agg.aov <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Subject <span class="sc">+</span> Congruency <span class="sc">+</span> Congruency_N_1, datRT, mean)</span>
+<span id="cb12-6"><a href="analysis.html#cb12-6" tabindex="-1"></a><span class="co">#factorize subject</span></span>
+<span id="cb12-7"><a href="analysis.html#cb12-7" tabindex="-1"></a>agg.aov<span class="sc">$</span>Subject <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(agg.aov<span class="sc">$</span>Subject)</span>
+<span id="cb12-8"><a href="analysis.html#cb12-8" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="analysis.html#cb12-9" tabindex="-1"></a><span class="co"># Run Bayesian ANOVA on aggregated RTs</span></span>
+<span id="cb12-10"><a href="analysis.html#cb12-10" tabindex="-1"></a><span class="fu">anovaBF</span>(RT <span class="sc">~</span> Congruency <span class="sc">*</span> Congruency_N_1 <span class="sc">+</span> Subject,</span>
+<span id="cb12-11"><a href="analysis.html#cb12-11" tabindex="-1"></a>                    <span class="at">data =</span> agg.aov,</span>
+<span id="cb12-12"><a href="analysis.html#cb12-12" tabindex="-1"></a>                    <span class="at">whichRandom =</span> <span class="st">&quot;Subject&quot;</span>,</span>
+<span id="cb12-13"><a href="analysis.html#cb12-13" tabindex="-1"></a>                    <span class="at">whichModels =</span> <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
+<p>Reporting the effects could look something like this:</p>
+<p>“There was strong evidence for a main effect of Congruency (BF₁₀ = 11.13), anecdotal evidence against a main effect of Congruency N-1 (BF₁₀ = 0.45), and moderate evidence for an interaction between Congruency and Congruency N-1 (BF₁₀ = 2.83). The full model including both main effects and their interaction was strongly supported over the null model (BF₁₀ = 625).”</p>
+<p>Additionally, you can do posterior sampling with the <code>posterior()</code> function to obtain posterior effect size estimates and credible intervals. This complements the Bayes Factor results by quantifying the plausible effect size under the model.</p>
+</div>
+</div>
+<div id="bayesian-model-comparison" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Bayesian model comparison<a href="analysis.html#bayesian-model-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can also compare multilevel models within a Bayesian framework, although this approach tends to be computationally heavy. Because there is no optimal Bayes Factor method for mixed-effects modeling yet, one workaround is to fit frequentist mixed-effects models using the <code>lme4</code> package and approximate Bayes Factors from the Bayesian Information Criterion (BIC).</p>
+<p>See the following example code:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="analysis.html#cb13-1" tabindex="-1"></a><span class="co"># load lme4 package</span></span>
+<span id="cb13-2"><a href="analysis.html#cb13-2" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb13-3"><a href="analysis.html#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="analysis.html#cb13-4" tabindex="-1"></a><span class="co"># build the two models to compare</span></span>
+<span id="cb13-5"><a href="analysis.html#cb13-5" tabindex="-1"></a>null.model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-6"><a href="analysis.html#cb13-6" tabindex="-1"></a>cong.model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">Cong</span> (<span class="dv">1</span>  <span class="sc">|</span> Subject), <span class="at">data=</span>datRT, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-7"><a href="analysis.html#cb13-7" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="analysis.html#cb13-8" tabindex="-1"></a><span class="co"># extract BIC values</span></span>
+<span id="cb13-9"><a href="analysis.html#cb13-9" tabindex="-1"></a>bic_null.model <span class="ot">&lt;-</span> <span class="fu">BIC</span>(null.model)</span>
+<span id="cb13-10"><a href="analysis.html#cb13-10" tabindex="-1"></a>bic_cong.model <span class="ot">&lt;-</span> <span class="fu">BIC</span>(cong.model)</span>
+<span id="cb13-11"><a href="analysis.html#cb13-11" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="analysis.html#cb13-12" tabindex="-1"></a><span class="co"># approximate a Bayes Factor 10</span></span>
+<span id="cb13-13"><a href="analysis.html#cb13-13" tabindex="-1"></a>bf <span class="ot">&lt;-</span> <span class="fu">exp</span>((bic_null.model <span class="sc">-</span> bic_cong.model) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb13-14"><a href="analysis.html#cb13-14" tabindex="-1"></a>bf</span></code></pre></div>
+<p>To calculate exact Bayes Factors for mixed-effects models, one approach is to fit the models using the <code>brms</code> package, which allows you to specify models using familiar R syntax, while running the computations via Stan. To compile Stan models, a working C++ toolchain is required, which on Windows means installing Rtools (version 4 or later). Before running your analyses, it is important to install Rtools and verify that it is properly configured.</p>
+<p>Once the models are fitted, we can use the <code>bridgesampling</code> package to estimate the Bayes Factor, which reflects the relative evidence in the data for one model over another.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="analysis.html#cb14-1" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb14-2"><a href="analysis.html#cb14-2" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb14-3"><a href="analysis.html#cb14-3" tabindex="-1"></a><span class="fu">library</span>(bridgesampling)</span>
+<span id="cb14-4"><a href="analysis.html#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="analysis.html#cb14-5" tabindex="-1"></a><span class="co"># build the two models to compare</span></span>
+<span id="cb14-6"><a href="analysis.html#cb14-6" tabindex="-1"></a>null.model <span class="ot">&lt;-</span> <span class="fu">brm</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), <span class="co"># lme4 model formula</span></span>
+<span id="cb14-7"><a href="analysis.html#cb14-7" tabindex="-1"></a>                  <span class="at">data=</span>datRT, <span class="co"># dataframe</span></span>
+<span id="cb14-8"><a href="analysis.html#cb14-8" tabindex="-1"></a>                  <span class="at">chains =</span> <span class="dv">4</span>, <span class="co"># leave it at default</span></span>
+<span id="cb14-9"><a href="analysis.html#cb14-9" tabindex="-1"></a>                  <span class="at">family =</span> <span class="fu">gaussian</span>(), <span class="co"># set family = binomial() for error data</span></span>
+<span id="cb14-10"><a href="analysis.html#cb14-10" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">1234</span>, <span class="co"># set seed for reproducibility</span></span>
+<span id="cb14-11"><a href="analysis.html#cb14-11" tabindex="-1"></a>                  <span class="at">file =</span> <span class="st">&quot;bfit-null_model.rds&quot;</span>, <span class="co"># save it in a file</span></span>
+<span id="cb14-12"><a href="analysis.html#cb14-12" tabindex="-1"></a>                  <span class="at">save_pars =</span> <span class="fu">save_pars</span>(<span class="at">all =</span> <span class="cn">TRUE</span>) <span class="co"># safe all parameters</span></span>
+<span id="cb14-13"><a href="analysis.html#cb14-13" tabindex="-1"></a>                  )</span>
+<span id="cb14-14"><a href="analysis.html#cb14-14" tabindex="-1"></a>cong.model <span class="ot">&lt;-</span> <span class="fu">brm</span>(RT <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> Congruency <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Subject), </span>
+<span id="cb14-15"><a href="analysis.html#cb14-15" tabindex="-1"></a>                  <span class="at">data=</span>datRT,</span>
+<span id="cb14-16"><a href="analysis.html#cb14-16" tabindex="-1"></a>                  <span class="at">seed =</span> <span class="dv">1234</span>,</span>
+<span id="cb14-17"><a href="analysis.html#cb14-17" tabindex="-1"></a>                  <span class="at">file =</span> <span class="st">&quot;bfit-cong_model.rds&quot;</span>, <span class="co"># save it in a file</span></span>
+<span id="cb14-18"><a href="analysis.html#cb14-18" tabindex="-1"></a>                  <span class="at">save_pars =</span> <span class="fu">save_pars</span>(<span class="at">all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-19"><a href="analysis.html#cb14-19" tabindex="-1"></a>                  )</span>
+<span id="cb14-20"><a href="analysis.html#cb14-20" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="analysis.html#cb14-21" tabindex="-1"></a><span class="co"># extract BIC values</span></span>
+<span id="cb14-22"><a href="analysis.html#cb14-22" tabindex="-1"></a>bridge_null.model <span class="ot">&lt;-</span> <span class="fu">bridge_sampler</span>(null.model)</span>
+<span id="cb14-23"><a href="analysis.html#cb14-23" tabindex="-1"></a>bridge_cong.model <span class="ot">&lt;-</span> <span class="fu">bridge_sampler</span>(cong.model)</span>
+<span id="cb14-24"><a href="analysis.html#cb14-24" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="analysis.html#cb14-25" tabindex="-1"></a><span class="co"># Compute the Bayes Factor</span></span>
+<span id="cb14-26"><a href="analysis.html#cb14-26" tabindex="-1"></a>bridgesampling<span class="sc">::</span><span class="fu">bf</span>(bridge_cong.model, bridge_null.model)</span></code></pre></div>
+<p>After fitting a model with <code>brm()</code>, it’s important to assess convergence diagnostics.</p>
+<p>First, start by inspecting the model output with the function <code>summary()</code>, with paying particular attention to the r-hat values (close to 1.00 suggests good convergence, while values above 1.01 may indicate issues and require adjustments). Second, visually inspect traceplots and perform a posterior predictive check (the <code>bayesplot</code>package offers convenient functions for both).</p>
+</div>
+</div>
+<div id="drift-diffusion-modeling" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Drift Diffusion Modeling<a href="analysis.html#drift-diffusion-modeling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This part is still under construction.</p>
+<p>For now, only relevant sources are cited here:</p>
+<p>Consider the following literature:</p>
+<ul>
+<li><p><a href="https://doi.org/10.3758/s13423-023-02288-0">Lee &amp; Sewell, 2023</a></p></li>
+<li><p><a href="https://doi.org/10.1016/j.cogpsych.2022.101528">Koob, Mackenzie, Ulrich, Leuthold &amp; Janczyk, 2023</a></p></li>
+<li><p><a href="https://doi.org/10.1016/j.metip.2021.100074">Mackenzie, &amp; Dudschig, 2023</a></p></li>
+<li><p><a href="https://doi.org/10.1016/j.cogpsych.2015.02.005">Ulrich, Schröter, Leuthold, &amp; Birngruber, 2015</a></p></li>
+</ul>
+<p>Bayesian reaction time model for the flanker task
+<a href="https://cran.r-project.org/web/packages/bayes4psy/vignettes/flanker.html" class="uri">https://cran.r-project.org/web/packages/bayes4psy/vignettes/flanker.html</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-preparation-ii.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basic-visualisation-ideas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-analysis_ideas.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

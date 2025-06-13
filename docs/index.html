@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A Beginners Guide on How to Analyse Conflict Tasks</title>
+  <meta name="description" content="A Beginners Guide on How to Analyse Conflict Tasks" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A Beginners Guide on How to Analyse Conflict Tasks" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Beginners Guide on How to Analyse Conflict Tasks" />
+  
+  
+  
+
+<meta name="author" content="Felix Cramer" />
+
+
+<meta name="date" content="2025-06-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="import-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#previous-experience-in-r"><i class="fa fa-check"></i>Previous Experience in R</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#coding-style"><i class="fa fa-check"></i>Coding Style</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#content-overview"><i class="fa fa-check"></i>Content Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="import-data.html"><a href="import-data.html"><i class="fa fa-check"></i><b>1</b> Import Data</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="import-data.html"><a href="import-data.html#set-directory-to-file-path"><i class="fa fa-check"></i><b>1.1</b> Set directory to file path</a></li>
+<li class="chapter" data-level="1.2" data-path="import-data.html"><a href="import-data.html#import-files"><i class="fa fa-check"></i><b>1.2</b> Import files</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="import-data.html"><a href="import-data.html#import-csv-files"><i class="fa fa-check"></i><b>1.2.1</b> Import csv files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-preparation-i.html"><a href="data-preparation-i.html"><i class="fa fa-check"></i><b>2</b> Data Preparation I</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-preparation-i.html"><a href="data-preparation-i.html#select-relevant-variables"><i class="fa fa-check"></i><b>2.1</b> Select Relevant Variables</a></li>
+<li class="chapter" data-level="2.2" data-path="data-preparation-i.html"><a href="data-preparation-i.html#create-new-variables"><i class="fa fa-check"></i><b>2.2</b> Create New Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="data-preparation-i.html"><a href="data-preparation-i.html#factorize-variables"><i class="fa fa-check"></i><b>2.3</b> Factorize variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-preparation-i.html"><a href="data-preparation-i.html#tidyverse"><i class="fa fa-check"></i><b>2.4</b> Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html"><i class="fa fa-check"></i><b>3</b> Data Preparation II</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-participants"><i class="fa fa-check"></i><b>3.1</b> Exclusion of participants</a></li>
+<li class="chapter" data-level="3.2" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-trials"><i class="fa fa-check"></i><b>3.2</b> Exclusion of trials</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-outliers"><i class="fa fa-check"></i><b>3.2.1</b> Exclusion of outliers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>4</b> Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analysis.html"><a href="analysis.html#t-test"><i class="fa fa-check"></i><b>4.1</b> t-test</a></li>
+<li class="chapter" data-level="4.2" data-path="analysis.html"><a href="analysis.html#anova"><i class="fa fa-check"></i><b>4.2</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3" data-path="analysis.html"><a href="analysis.html#mixed-effect-models-lmms-glmms"><i class="fa fa-check"></i><b>4.3</b> Mixed-Effect Models (LMMs/ GLMMs)</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="analysis.html"><a href="analysis.html#building-models-adding-random-effects"><i class="fa fa-check"></i><b>4.3.1</b> Building models: Adding random effects</a></li>
+<li class="chapter" data-level="4.3.2" data-path="analysis.html"><a href="analysis.html#testing-models"><i class="fa fa-check"></i><b>4.3.2</b> Testing models</a></li>
+<li class="chapter" data-level="4.3.3" data-path="analysis.html"><a href="analysis.html#fitting-issues"><i class="fa fa-check"></i><b>4.3.3</b> Fitting issues</a></li>
+<li class="chapter" data-level="4.3.4" data-path="analysis.html"><a href="analysis.html#stepwise-model-selection-pipeline"><i class="fa fa-check"></i><b>4.3.4</b> Stepwise model selection pipeline</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="analysis.html"><a href="analysis.html#bayesian-approaches"><i class="fa fa-check"></i><b>4.4</b> Bayesian Approaches</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="analysis.html"><a href="analysis.html#bayesian-hypothesis-tests"><i class="fa fa-check"></i><b>4.4.1</b> Bayesian Hypothesis Tests</a></li>
+<li class="chapter" data-level="4.4.2" data-path="analysis.html"><a href="analysis.html#bayesian-model-comparison"><i class="fa fa-check"></i><b>4.4.2</b> Bayesian model comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="analysis.html"><a href="analysis.html#drift-diffusion-modeling"><i class="fa fa-check"></i><b>4.5</b> Drift Diffusion Modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html"><i class="fa fa-check"></i><b>5</b> Basic Visualisation Ideas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#interaction-plots"><i class="fa fa-check"></i><b>5.1</b> Interaction Plots</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#base-r-option"><i class="fa fa-check"></i><b>5.1.1</b> Base R Option</a></li>
+<li class="chapter" data-level="5.1.2" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#ggplot2-option"><i class="fa fa-check"></i><b>5.1.2</b> ggplot2 Option</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#barplots"><i class="fa fa-check"></i><b>5.2</b> Barplots</a></li>
+<li class="chapter" data-level="5.3" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#density-plots"><i class="fa fa-check"></i><b>5.3</b> Density Plots</a></li>
+<li class="chapter" data-level="5.4" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#combined-plots"><i class="fa fa-check"></i><b>5.4</b> Combined Plots</a></li>
+<li class="chapter" data-level="5.5" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#plotting-mean-differences"><i class="fa fa-check"></i><b>5.5</b> Plotting mean differences</a></li>
+<li class="chapter" data-level="5.6" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#final-notes-on-graphics"><i class="fa fa-check"></i><b>5.6</b> Final notes on graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="specific-effects.html"><a href="specific-effects.html"><i class="fa fa-check"></i><b>6</b> Specific Effects</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="specific-effects.html"><a href="specific-effects.html#ces"><i class="fa fa-check"></i><b>6.1</b> CEs</a></li>
+<li class="chapter" data-level="6.2" data-path="specific-effects.html"><a href="specific-effects.html#get-dat-as-dataframe-correctly"><i class="fa fa-check"></i><b>6.2</b> get dat as dataframe correctly</a></li>
+<li class="chapter" data-level="6.3" data-path="specific-effects.html"><a href="specific-effects.html#step-1-prepare-dataframes-for-acc-and-rt"><i class="fa fa-check"></i><b>6.3</b> Step 1: prepare dataframes for ACC and RT</a></li>
+<li class="chapter" data-level="6.4" data-path="specific-effects.html"><a href="specific-effects.html#step-2"><i class="fa fa-check"></i><b>6.4</b> Step 2</a></li>
+<li class="chapter" data-level="6.5" data-path="specific-effects.html"><a href="specific-effects.html#step-3"><i class="fa fa-check"></i><b>6.5</b> Step 3</a></li>
+<li class="chapter" data-level="6.6" data-path="specific-effects.html"><a href="specific-effects.html#cses"><i class="fa fa-check"></i><b>6.6</b> CSEs</a></li>
+<li class="chapter" data-level="6.7" data-path="specific-effects.html"><a href="specific-effects.html#mixing-costs-und-switching-costs"><i class="fa fa-check"></i><b>6.7</b> Mixing Costs und Switching Costs</a></li>
+<li class="chapter" data-level="6.8" data-path="specific-effects.html"><a href="specific-effects.html#task-switching"><i class="fa fa-check"></i><b>6.8</b> Task Switching</a></li>
+<li class="chapter" data-level="6.9" data-path="specific-effects.html"><a href="specific-effects.html#post-error-slowing"><i class="fa fa-check"></i><b>6.9</b> Post-error Slowing</a></li>
+<li class="chapter" data-level="6.10" data-path="specific-effects.html"><a href="specific-effects.html#delta-plots"><i class="fa fa-check"></i><b>6.10</b> Delta Plots</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Beginners Guide on How to Analyse Conflict Tasks</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">A Beginners Guide on How to Analyse Conflict Tasks</h1>
+<p class="author"><em>Felix Cramer</em></p>
+<p class="date"><em>2025-06-13</em></p>
+</div>
+<div id="about" class="section level1 unnumbered hasAnchor">
+<h1>About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This book aims to guide through common steps when analyzing conflict tasks such as flanker, Simon, Stroop or prime-target tasks.</p>
+<p>It is conceptualized to provide students with ideas on how to visualize and how to analyze their theses data, but also to establish a consistent approach on how to pre-process data. The latter enables us to better compare results to other data from the lab.</p>
+<p>Feel free to take any code snippets from this guide, but make sure to correctly adjust it to your data.</p>
+<p>Please contact me for any suggestions or questions: <a href="mailto:felix.cramer@uni-tuebingen.de" class="email">felix.cramer@uni-tuebingen.de</a></p>
+<div id="previous-experience-in-r" class="section level2 unnumbered hasAnchor">
+<h2>Previous Experience in R<a href="index.html#previous-experience-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you are already familiar with programming in R, I would suggest you to browse through the sections and just pick what might be helpful for you - but please make sure to read to the Chapter Data Preparation II.</p>
+<p>If you don’t really know what to do in R, I would recommend you to start at the very beginning. This book is designed to assist students with little to no background in R. However, a general understanding of R is required if you want to adapt the here provided code.</p>
+<p>There are a lot of online books from which you can improve your general R skills.</p>
+<p>For example:</p>
+<p><a href="https://intro2r.com/">An Introduction to R</a> (Douglas et al., 2024), Chapter 1-6 give a solid and compact introduction into R and the most common IDE R Studio.</p>
+<p><a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a> (Hadley Wickham, 2024) is an introduction into the tidyverse packages, focusing on data preparation and data visualization.</p>
+<p>The solution to minor issues in R is likely to be found by a quick internet search (e.g., search for the error message or the task you want to perform). I can further recommend two very good AI chatbots (beside the obvious one):</p>
+<p><a href="https://www.phind.com/">https://www.phind.com/</a></p>
+<p><a href="https://rtutor.ai/">https://rtutor.ai/</a> - the server has issues sometimes, so you might need to run it locally, see <a href="https://github.com/gexijin/RTutor">here</a></p>
+<p>Only use them carefully and be sure to verify and reconstruct any proposition. Any extended use of AI must be cited, so please be sure to follow the official guidelines of the university.</p>
+</div>
+<div id="coding-style" class="section level2 unnumbered hasAnchor">
+<h2>Coding Style<a href="index.html#coding-style" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This book primarily makes suggestions in Base R code, but also there are also examples on how to use functions from several packages, such as <code>dyplr</code>, <code>ggplot2</code> or <code>sciplot</code>.</p>
+</div>
+<div id="content-overview" class="section level2 unnumbered hasAnchor">
+<h2>Content Overview<a href="index.html#content-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Chapters 1-5 focus in chronological order on the different steps that have to be taken in order to get results and plots from raw data:</p>
+<ul>
+<li>Chapter 1: How to import you raw experimental data into R</li>
+<li>Chapter 2: How to wrangle your data into a well-ordered, clean dataframe</li>
+<li>Chapter 3: What trials to exclude and how to exclude them</li>
+<li>Chapter 4: Some approaches of analyzing data and how to conduct them in R</li>
+<li>Chapter 5: Some ideas on how to visualize conflict task data</li>
+</ul>
+<p>Chapter 6 then looks at ideas on specific effects: congruency effects (CE), congruency sequence effects (CSE), Mixing Costs/ Switching Costs, task switching, across-task and within-task CSE, Proportion Congruency Effect (PCE), post-error slowing (PES), post-error increase in accuracy (PIA), PERI (post-error reduction of interference), deltaplots</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="import-data.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

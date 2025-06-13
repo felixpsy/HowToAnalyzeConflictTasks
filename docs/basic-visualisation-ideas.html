@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Basic Visualisation Ideas | A Beginners Guide on How to Analyse Conflict Tasks</title>
+  <meta name="description" content="Chapter 5 Basic Visualisation Ideas | A Beginners Guide on How to Analyse Conflict Tasks" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Basic Visualisation Ideas | A Beginners Guide on How to Analyse Conflict Tasks" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Basic Visualisation Ideas | A Beginners Guide on How to Analyse Conflict Tasks" />
+  
+  
+  
+
+<meta name="author" content="Felix Cramer" />
+
+
+<meta name="date" content="2025-06-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analysis.html"/>
+<link rel="next" href="specific-effects.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#previous-experience-in-r"><i class="fa fa-check"></i>Previous Experience in R</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#coding-style"><i class="fa fa-check"></i>Coding Style</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#content-overview"><i class="fa fa-check"></i>Content Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="import-data.html"><a href="import-data.html"><i class="fa fa-check"></i><b>1</b> Import Data</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="import-data.html"><a href="import-data.html#set-directory-to-file-path"><i class="fa fa-check"></i><b>1.1</b> Set directory to file path</a></li>
+<li class="chapter" data-level="1.2" data-path="import-data.html"><a href="import-data.html#import-files"><i class="fa fa-check"></i><b>1.2</b> Import files</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="import-data.html"><a href="import-data.html#import-csv-files"><i class="fa fa-check"></i><b>1.2.1</b> Import csv files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-preparation-i.html"><a href="data-preparation-i.html"><i class="fa fa-check"></i><b>2</b> Data Preparation I</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-preparation-i.html"><a href="data-preparation-i.html#select-relevant-variables"><i class="fa fa-check"></i><b>2.1</b> Select Relevant Variables</a></li>
+<li class="chapter" data-level="2.2" data-path="data-preparation-i.html"><a href="data-preparation-i.html#create-new-variables"><i class="fa fa-check"></i><b>2.2</b> Create New Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="data-preparation-i.html"><a href="data-preparation-i.html#factorize-variables"><i class="fa fa-check"></i><b>2.3</b> Factorize variables</a></li>
+<li class="chapter" data-level="2.4" data-path="data-preparation-i.html"><a href="data-preparation-i.html#tidyverse"><i class="fa fa-check"></i><b>2.4</b> Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html"><i class="fa fa-check"></i><b>3</b> Data Preparation II</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-participants"><i class="fa fa-check"></i><b>3.1</b> Exclusion of participants</a></li>
+<li class="chapter" data-level="3.2" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-trials"><i class="fa fa-check"></i><b>3.2</b> Exclusion of trials</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-preparation-ii.html"><a href="data-preparation-ii.html#exclusion-of-outliers"><i class="fa fa-check"></i><b>3.2.1</b> Exclusion of outliers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>4</b> Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analysis.html"><a href="analysis.html#t-test"><i class="fa fa-check"></i><b>4.1</b> t-test</a></li>
+<li class="chapter" data-level="4.2" data-path="analysis.html"><a href="analysis.html#anova"><i class="fa fa-check"></i><b>4.2</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3" data-path="analysis.html"><a href="analysis.html#lmms-glmms"><i class="fa fa-check"></i><b>4.3</b> LMMs/ GLMMs</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="analysis.html"><a href="analysis.html#building-models-adding-random-effects"><i class="fa fa-check"></i><b>4.3.1</b> Building models: Adding random effects</a></li>
+<li class="chapter" data-level="4.3.2" data-path="analysis.html"><a href="analysis.html#testing-models-testmod"><i class="fa fa-check"></i><b>4.3.2</b> Testing models {testmod}</a></li>
+<li class="chapter" data-level="4.3.3" data-path="analysis.html"><a href="analysis.html#convergence-issues-and-pragmatic-approaches"><i class="fa fa-check"></i><b>4.3.3</b> convergence issues and pragmatic approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="analysis.html"><a href="analysis.html#bayesian-hypothesis-testing"><i class="fa fa-check"></i><b>4.4</b> Bayesian hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="analysis.html"><a href="analysis.html#bayes-factors-for-classical-tests"><i class="fa fa-check"></i><b>4.4.1</b> Bayes factors for classical tests</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="analysis.html"><a href="analysis.html#bayesian-modelling"><i class="fa fa-check"></i><b>4.5</b> Bayesian modelling?</a></li>
+<li class="chapter" data-level="4.6" data-path="analysis.html"><a href="analysis.html#drift-diffusion-modelling"><i class="fa fa-check"></i><b>4.6</b> Drift diffusion modelling</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html"><i class="fa fa-check"></i><b>5</b> Basic Visualisation Ideas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#interaction-plots"><i class="fa fa-check"></i><b>5.1</b> Interaction Plots</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#base-r-option"><i class="fa fa-check"></i><b>5.1.1</b> Base R Option</a></li>
+<li class="chapter" data-level="5.1.2" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#ggplot2-option"><i class="fa fa-check"></i><b>5.1.2</b> ggplot2 Option</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#barplots"><i class="fa fa-check"></i><b>5.2</b> Barplots</a></li>
+<li class="chapter" data-level="5.3" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#density-plots"><i class="fa fa-check"></i><b>5.3</b> Density Plots</a></li>
+<li class="chapter" data-level="5.4" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#combined-plots"><i class="fa fa-check"></i><b>5.4</b> Combined Plots</a></li>
+<li class="chapter" data-level="5.5" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#plotting-mean-differences"><i class="fa fa-check"></i><b>5.5</b> Plotting mean differences</a></li>
+<li class="chapter" data-level="5.6" data-path="basic-visualisation-ideas.html"><a href="basic-visualisation-ideas.html#final-notes-on-graphics"><i class="fa fa-check"></i><b>5.6</b> Final notes on graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="specific-effects.html"><a href="specific-effects.html"><i class="fa fa-check"></i><b>6</b> Specific Effects</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="specific-effects.html"><a href="specific-effects.html#ces"><i class="fa fa-check"></i><b>6.1</b> CEs</a></li>
+<li class="chapter" data-level="6.2" data-path="specific-effects.html"><a href="specific-effects.html#get-dat-as-dataframe-correctly"><i class="fa fa-check"></i><b>6.2</b> get dat as dataframe correctly</a></li>
+<li class="chapter" data-level="6.3" data-path="specific-effects.html"><a href="specific-effects.html#step-1-prepare-dataframes-for-acc-and-rt"><i class="fa fa-check"></i><b>6.3</b> Step 1: prepare dataframes for ACC and RT</a></li>
+<li class="chapter" data-level="6.4" data-path="specific-effects.html"><a href="specific-effects.html#step-2"><i class="fa fa-check"></i><b>6.4</b> Step 2</a></li>
+<li class="chapter" data-level="6.5" data-path="specific-effects.html"><a href="specific-effects.html#step-3"><i class="fa fa-check"></i><b>6.5</b> Step 3</a></li>
+<li class="chapter" data-level="6.6" data-path="specific-effects.html"><a href="specific-effects.html#cses"><i class="fa fa-check"></i><b>6.6</b> CSEs</a></li>
+<li class="chapter" data-level="6.7" data-path="specific-effects.html"><a href="specific-effects.html#mixing-costs-und-switching-costs"><i class="fa fa-check"></i><b>6.7</b> Mixing Costs und Switching Costs</a></li>
+<li class="chapter" data-level="6.8" data-path="specific-effects.html"><a href="specific-effects.html#task-switching"><i class="fa fa-check"></i><b>6.8</b> Task Switching</a></li>
+<li class="chapter" data-level="6.9" data-path="specific-effects.html"><a href="specific-effects.html#post-error-slowing"><i class="fa fa-check"></i><b>6.9</b> Post-error Slowing</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Beginners Guide on How to Analyse Conflict Tasks</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="basic-visualisation-ideas" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Basic Visualisation Ideas<a href="basic-visualisation-ideas.html#basic-visualisation-ideas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>One of the core strengths of R is its ability to produce highly customizable data visualizations. Since plots are a central component of your thesis or manuscript, investing time into creating them is well worth the effort.</p>
+<p>While your plots should ultimately reflect and highlight your key findings, it might be best to create them after you have finalized your results. That said, experimenting with different types of plots early on can help you explore the descriptive statistics and distributional patterns in your data, providing insight before any interpretation.</p>
+<p>This chapter presents a range of ideas for visualizing data from conflict tasks. If any of the suggestions resonate with you, it’s best to adopt the general concept (or R function) and then build your own plot step-by-step from scratch (just as you learned it - or should learn it anyways)). Simply copying and pasting the code may not work seamlessly, so better try to understand the underlying structure.</p>
+<p>If you are looking to improve your data visualization skills, there are plenty of helpful resources online. A good starting point is <a href="https://ggplot2-book.org/layers.html">ggplot2: elegant graphics for data analysis</a> by Hadley Wickham and colleagues, or the general <a href="https://r-graphics.org/">Cookbook</a> on R graphics by Winston Chang.</p>
+<p>When visualizing effects in conflict tasks, you have several options. You could plot the mean of different experimental conditions (e.g., interaction plots or barplots), RT distributions (density or violin plots), combine the both approaches (e.g., boxplots or rainbow plots) or plot difference scores [e.g., the CE as RT(incongruent) - RT(congruent)]. But how to choose? Your plot should clearly convey the main message of your thesis—even if that message includes null effects—while balancing between clarity, visual appeal, and informative detail.</p>
+<div id="interaction-plots" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Interaction Plots<a href="basic-visualisation-ideas.html#interaction-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Interaction plots are the gold standard for visualizing many effects. Below, you’ll find several options tailored to the example of congruency sequence effects.</p>
+<p>Importantly, you should begin by aggregating your data, as your goal is to display four data points—each representing the mean of a specific condition. Crucially, this aggregation must be done at the subject level first (i.e., four means per subject). This step is essential because the number of trials per condition often varies across subjects due to factors like trial exclusions or differing error rates.</p>
+<div id="base-r-option" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Base R Option<a href="basic-visualisation-ideas.html#base-r-option" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In base R, the simplest way to create an interaction plot is by using the built-in<code>interaction.plot()</code> function (see the R documentation for more details).</p>
+<p>Start with your dataframe of aggregated values. Make sure your independent variables (e.g., current trial type and previous trial type) are coded as factors, define your point symbols and y-axis, add axis titles. With just a few lines of code, you’ll have a basic interaction plot.</p>
+<p>If you want to add standard errors, you’ll need to calculate them beforehand using the formula sd/sqrt(n) and then include them using the <code>arrows()</code> function.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="basic-visualisation-ideas.html#cb1-1" tabindex="-1"></a><span class="co"># Aggregate to 4 data points</span></span>
+<span id="cb1-2"><a href="basic-visualisation-ideas.html#cb1-2" tabindex="-1"></a>dat1 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Congruency <span class="sc">+</span> Congruency_N_1, datRT, mean)</span>
+<span id="cb1-3"><a href="basic-visualisation-ideas.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="basic-visualisation-ideas.html#cb1-4" tabindex="-1"></a><span class="co"># Check descriptive data</span></span>
+<span id="cb1-5"><a href="basic-visualisation-ideas.html#cb1-5" tabindex="-1"></a><span class="fu">str</span>(dat1)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  3 variables:
+##  $ Congruency    : Factor w/ 2 levels &quot;congruent&quot;,&quot;incongruent&quot;: 1 2 1 2
+##  $ Congruency_N_1: Factor w/ 2 levels &quot;congruent&quot;,&quot;incongruent&quot;: 1 1 2 2
+##  $ RT            : num  407 471 441 429</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="basic-visualisation-ideas.html#cb3-1" tabindex="-1"></a><span class="co"># interaction plot</span></span>
+<span id="cb3-2"><a href="basic-visualisation-ideas.html#cb3-2" tabindex="-1"></a><span class="fu">with</span>(dat1, <span class="fu">interaction.plot</span>(Congruency_N_1, Congruency, RT, </span>
+<span id="cb3-3"><a href="basic-visualisation-ideas.html#cb3-3" tabindex="-1"></a>                            <span class="at">type=</span><span class="st">&quot;b&quot;</span>,</span>
+<span id="cb3-4"><a href="basic-visualisation-ideas.html#cb3-4" tabindex="-1"></a>                            <span class="at">pch=</span><span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>), </span>
+<span id="cb3-5"><a href="basic-visualisation-ideas.html#cb3-5" tabindex="-1"></a>                            <span class="at">xlab=</span><span class="st">&quot;Previous Congruency&quot;</span>,</span>
+<span id="cb3-6"><a href="basic-visualisation-ideas.html#cb3-6" tabindex="-1"></a>                            <span class="at">ylab=</span><span class="st">&quot;RT (in ms)&quot;</span>, </span>
+<span id="cb3-7"><a href="basic-visualisation-ideas.html#cb3-7" tabindex="-1"></a>                            <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">400</span>, <span class="dv">500</span>)))</span>
+<span id="cb3-8"><a href="basic-visualisation-ideas.html#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="basic-visualisation-ideas.html#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="basic-visualisation-ideas.html#cb3-10" tabindex="-1"></a><span class="co"># interaction plot + SE</span></span>
+<span id="cb3-11"><a href="basic-visualisation-ideas.html#cb3-11" tabindex="-1"></a>dat1 <span class="ot">&lt;-</span> dat1[<span class="fu">order</span>(dat1<span class="sc">$</span>Congruency), ]</span>
+<span id="cb3-12"><a href="basic-visualisation-ideas.html#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="basic-visualisation-ideas.html#cb3-13" tabindex="-1"></a>dat1<span class="sc">$</span>sd <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Congruency <span class="sc">+</span> Congruency_N_1, datRT, sd)[, <span class="dv">3</span>]</span>
+<span id="cb3-14"><a href="basic-visualisation-ideas.html#cb3-14" tabindex="-1"></a>dat1<span class="sc">$</span>n <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Congruency <span class="sc">+</span> Congruency_N_1, datRT, length)[, <span class="dv">3</span>]</span>
+<span id="cb3-15"><a href="basic-visualisation-ideas.html#cb3-15" tabindex="-1"></a>dat1<span class="sc">$</span>se <span class="ot">&lt;-</span> <span class="fu">with</span>(dat1, sd<span class="sc">/</span><span class="fu">sqrt</span>(n))</span>
+<span id="cb3-16"><a href="basic-visualisation-ideas.html#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="basic-visualisation-ideas.html#cb3-17" tabindex="-1"></a><span class="fu">arrows</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, dat1<span class="sc">$</span>RT <span class="sc">+</span> dat1<span class="sc">$</span>se, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, dat1<span class="sc">$</span>RT <span class="sc">-</span> dat1<span class="sc">$</span>se,</span>
+<span id="cb3-18"><a href="basic-visualisation-ideas.html#cb3-18" tabindex="-1"></a>       <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">code =</span> <span class="dv">3</span>, <span class="at">length =</span> .<span class="dv">05</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="ggplot2-option" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> ggplot2 Option<a href="basic-visualisation-ideas.html#ggplot2-option" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The tidyverse version (using the packages <code>dplyr</code> and <code>ggplot2</code>) of a simple interaction plot is just as straightforward.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="basic-visualisation-ideas.html#cb4-1" tabindex="-1"></a><span class="co"># Aggregate  first and calculate Mean, SD, and SE</span></span>
+<span id="cb4-2"><a href="basic-visualisation-ideas.html#cb4-2" tabindex="-1"></a>dat1 <span class="ot">&lt;-</span> datRT <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="basic-visualisation-ideas.html#cb4-3" tabindex="-1"></a>  <span class="fu">group_by</span>(Congruency, Congruency_N_1) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="basic-visualisation-ideas.html#cb4-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">N =</span> <span class="fu">n</span>(),</span>
+<span id="cb4-5"><a href="basic-visualisation-ideas.html#cb4-5" tabindex="-1"></a>            <span class="at">mean_RT =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(RT), <span class="at">na.rm =</span> T),</span>
+<span id="cb4-6"><a href="basic-visualisation-ideas.html#cb4-6" tabindex="-1"></a>            <span class="at">sd_RT =</span> <span class="fu">sd</span>(RT, <span class="at">na.rm =</span> T),</span>
+<span id="cb4-7"><a href="basic-visualisation-ideas.html#cb4-7" tabindex="-1"></a>            <span class="at">se_RT =</span> sd_RT<span class="sc">/</span><span class="fu">sqrt</span>(N), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>)</span>
+<span id="cb4-8"><a href="basic-visualisation-ideas.html#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="basic-visualisation-ideas.html#cb4-9" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="basic-visualisation-ideas.html#cb4-10" tabindex="-1"></a><span class="co"># Build the simple interaction plot</span></span>
+<span id="cb4-11"><a href="basic-visualisation-ideas.html#cb4-11" tabindex="-1"></a><span class="fu">ggplot</span>(dat1, <span class="fu">aes</span>(<span class="at">x =</span> Congruency_N_1, <span class="at">y =</span> mean_RT, <span class="at">color =</span> Congruency, <span class="at">group =</span> Congruency)) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="basic-visualisation-ideas.html#cb4-12" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-13"><a href="basic-visualisation-ideas.html#cb4-13" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-14"><a href="basic-visualisation-ideas.html#cb4-14" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_RT <span class="sc">-</span> se_RT, <span class="at">ymax =</span> mean_RT <span class="sc">+</span> se_RT), <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="basic-visualisation-ideas.html#cb4-15" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-16"><a href="basic-visualisation-ideas.html#cb4-16" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Previous Congruency&quot;</span>,</span>
+<span id="cb4-17"><a href="basic-visualisation-ideas.html#cb4-17" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;RT (in ms)&quot;</span>,</span>
+<span id="cb4-18"><a href="basic-visualisation-ideas.html#cb4-18" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Interaction Plot of RT&quot;</span></span>
+<span id="cb4-19"><a href="basic-visualisation-ideas.html#cb4-19" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-20"><a href="basic-visualisation-ideas.html#cb4-20" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div id="improve-the-basic-interaction-plot" class="section level4 hasAnchor" number="5.1.2.1">
+<h4><span class="header-section-number">5.1.2.1</span> Improve the basic interaction plot<a href="basic-visualisation-ideas.html#improve-the-basic-interaction-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The simple interaction plot can easily be polished into a APA-conform format (code idea is adapted from this <a href="https://osf.io/jefsx">osf repository</a>):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="basic-visualisation-ideas.html#cb5-1" tabindex="-1"></a><span class="co"># usage of the papaja APA theme for ggplot objects</span></span>
+<span id="cb5-2"><a href="basic-visualisation-ideas.html#cb5-2" tabindex="-1"></a><span class="fu">ggplot</span>(dat1, <span class="fu">aes</span>(<span class="at">x =</span> Congruency_N_1, </span>
+<span id="cb5-3"><a href="basic-visualisation-ideas.html#cb5-3" tabindex="-1"></a>                 <span class="at">y =</span> mean_RT, </span>
+<span id="cb5-4"><a href="basic-visualisation-ideas.html#cb5-4" tabindex="-1"></a>                 <span class="at">linetype =</span> Congruency, </span>
+<span id="cb5-5"><a href="basic-visualisation-ideas.html#cb5-5" tabindex="-1"></a>                 <span class="at">group =</span> Congruency)) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="basic-visualisation-ideas.html#cb5-6" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="basic-visualisation-ideas.html#cb5-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="basic-visualisation-ideas.html#cb5-8" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_RT <span class="sc">-</span> se_RT, <span class="at">ymax =</span> mean_RT <span class="sc">+</span> se_RT), </span>
+<span id="cb5-9"><a href="basic-visualisation-ideas.html#cb5-9" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="basic-visualisation-ideas.html#cb5-10" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;solid&quot;</span>, <span class="st">&quot;dashed&quot;</span>),</span>
+<span id="cb5-11"><a href="basic-visualisation-ideas.html#cb5-11" tabindex="-1"></a>                        <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;congruent&quot;</span>, <span class="st">&quot;incongruent&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="basic-visualisation-ideas.html#cb5-12" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-13"><a href="basic-visualisation-ideas.html#cb5-13" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Previous Congruency&quot;</span>,</span>
+<span id="cb5-14"><a href="basic-visualisation-ideas.html#cb5-14" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;RT (in ms)&quot;</span>,</span>
+<span id="cb5-15"><a href="basic-visualisation-ideas.html#cb5-15" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Interaction Plot of CSE&quot;</span>,</span>
+<span id="cb5-16"><a href="basic-visualisation-ideas.html#cb5-16" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;Congruency&quot;</span></span>
+<span id="cb5-17"><a href="basic-visualisation-ideas.html#cb5-17" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-18"><a href="basic-visualisation-ideas.html#cb5-18" tabindex="-1"></a>  papaja<span class="sc">::</span><span class="fu">theme_apa</span>() <span class="sc">+</span></span>
+<span id="cb5-19"><a href="basic-visualisation-ideas.html#cb5-19" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.key.width =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">&quot;cm&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Furthermore, the <code>ggplot2</code> package offers a variety of handy additional functions, for example, <code>position_dodge</code> can help to prevent overlap between error bars (or points):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="basic-visualisation-ideas.html#cb6-1" tabindex="-1"></a><span class="co"># changing the APA Plot, so that error bars do not overlap</span></span>
+<span id="cb6-2"><a href="basic-visualisation-ideas.html#cb6-2" tabindex="-1"></a><span class="fu">ggplot</span>(dat1, <span class="fu">aes</span>(<span class="at">x =</span> Congruency_N_1, </span>
+<span id="cb6-3"><a href="basic-visualisation-ideas.html#cb6-3" tabindex="-1"></a>                 <span class="at">y =</span> mean_RT, </span>
+<span id="cb6-4"><a href="basic-visualisation-ideas.html#cb6-4" tabindex="-1"></a>                 <span class="at">linetype =</span> Congruency)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="basic-visualisation-ideas.html#cb6-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">group =</span> Congruency), <span class="at">size =</span> <span class="dv">2</span>, </span>
+<span id="cb6-6"><a href="basic-visualisation-ideas.html#cb6-6" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="basic-visualisation-ideas.html#cb6-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> Congruency), <span class="at">size =</span> <span class="dv">1</span>, </span>
+<span id="cb6-8"><a href="basic-visualisation-ideas.html#cb6-8" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="basic-visualisation-ideas.html#cb6-9" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_RT <span class="sc">-</span> se_RT, </span>
+<span id="cb6-10"><a href="basic-visualisation-ideas.html#cb6-10" tabindex="-1"></a>                    <span class="at">ymax =</span> mean_RT <span class="sc">+</span> se_RT, </span>
+<span id="cb6-11"><a href="basic-visualisation-ideas.html#cb6-11" tabindex="-1"></a>                    <span class="at">group =</span> Congruency), </span>
+<span id="cb6-12"><a href="basic-visualisation-ideas.html#cb6-12" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>,</span>
+<span id="cb6-13"><a href="basic-visualisation-ideas.html#cb6-13" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb6-14"><a href="basic-visualisation-ideas.html#cb6-14" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;solid&quot;</span>, <span class="st">&quot;dashed&quot;</span>),</span>
+<span id="cb6-15"><a href="basic-visualisation-ideas.html#cb6-15" tabindex="-1"></a>                        <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;congruent&quot;</span>, <span class="st">&quot;incongruent&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="basic-visualisation-ideas.html#cb6-16" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-17"><a href="basic-visualisation-ideas.html#cb6-17" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Previous Congruency&quot;</span>,</span>
+<span id="cb6-18"><a href="basic-visualisation-ideas.html#cb6-18" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;RT (in ms)&quot;</span>,</span>
+<span id="cb6-19"><a href="basic-visualisation-ideas.html#cb6-19" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Interaction Plot of CSE&quot;</span>,</span>
+<span id="cb6-20"><a href="basic-visualisation-ideas.html#cb6-20" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;Congruency&quot;</span></span>
+<span id="cb6-21"><a href="basic-visualisation-ideas.html#cb6-21" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-22"><a href="basic-visualisation-ideas.html#cb6-22" tabindex="-1"></a>  papaja<span class="sc">::</span><span class="fu">theme_apa</span>() <span class="sc">+</span></span>
+<span id="cb6-23"><a href="basic-visualisation-ideas.html#cb6-23" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.key.width =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">&quot;cm&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Another great add-on in <code>ggplot2</code> is <code>facet_grid()</code> — particularly useful when you want to visualize interaction plots across multiple groups (e.g., the CSE for flanker vs. Simon of for experimental vs. control group). <code>facet_grid()</code> allows you to split the plots by one or more additional factors, all in a single, clean layout. The following example shows a flanker vs. Simon task in single task vs. mixed task blocks.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="basic-visualisation-ideas.html#cb7-1" tabindex="-1"></a><span class="co"># Aggregate  first and calculate Mean, SD, and SE</span></span>
+<span id="cb7-2"><a href="basic-visualisation-ideas.html#cb7-2" tabindex="-1"></a>dat1 <span class="ot">&lt;-</span> datRT <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="basic-visualisation-ideas.html#cb7-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-4"><a href="basic-visualisation-ideas.html#cb7-4" tabindex="-1"></a>    <span class="at">Congruency =</span> <span class="fu">recode</span>(Congruency, </span>
+<span id="cb7-5"><a href="basic-visualisation-ideas.html#cb7-5" tabindex="-1"></a>                        <span class="st">&quot;congruent&quot;</span> <span class="ot">=</span> <span class="st">&quot;con&quot;</span>, <span class="st">&quot;incongruent&quot;</span> <span class="ot">=</span> <span class="st">&quot;inc&quot;</span>),</span>
+<span id="cb7-6"><a href="basic-visualisation-ideas.html#cb7-6" tabindex="-1"></a>    <span class="at">Congruency_N_1 =</span> <span class="fu">recode</span>(Congruency_N_1, </span>
+<span id="cb7-7"><a href="basic-visualisation-ideas.html#cb7-7" tabindex="-1"></a>                            <span class="st">&quot;congruent&quot;</span> <span class="ot">=</span> <span class="st">&quot;con&quot;</span>, <span class="st">&quot;incongruent&quot;</span> <span class="ot">=</span> <span class="st">&quot;inc&quot;</span>)</span>
+<span id="cb7-8"><a href="basic-visualisation-ideas.html#cb7-8" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="basic-visualisation-ideas.html#cb7-9" tabindex="-1"></a>  <span class="fu">group_by</span>(Congruency, Congruency_N_1, Task_Type, Block_Type) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-10"><a href="basic-visualisation-ideas.html#cb7-10" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">N =</span> <span class="fu">n</span>(),</span>
+<span id="cb7-11"><a href="basic-visualisation-ideas.html#cb7-11" tabindex="-1"></a>            <span class="at">mean_RT =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(RT), <span class="at">na.rm =</span> T),</span>
+<span id="cb7-12"><a href="basic-visualisation-ideas.html#cb7-12" tabindex="-1"></a>            <span class="at">sd_RT =</span> <span class="fu">sd</span>(RT, <span class="at">na.rm =</span> T),</span>
+<span id="cb7-13"><a href="basic-visualisation-ideas.html#cb7-13" tabindex="-1"></a>            <span class="at">se_RT =</span> sd_RT<span class="sc">/</span><span class="fu">sqrt</span>(N), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>)</span>
+<span id="cb7-14"><a href="basic-visualisation-ideas.html#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="basic-visualisation-ideas.html#cb7-15" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="basic-visualisation-ideas.html#cb7-16" tabindex="-1"></a><span class="co"># Build the simple interaction plot</span></span>
+<span id="cb7-17"><a href="basic-visualisation-ideas.html#cb7-17" tabindex="-1"></a><span class="fu">ggplot</span>(dat1, <span class="fu">aes</span>(<span class="at">x =</span> Congruency_N_1, <span class="at">y =</span> mean_RT, <span class="at">color =</span> Congruency, <span class="at">group =</span> Congruency)) <span class="sc">+</span></span>
+<span id="cb7-18"><a href="basic-visualisation-ideas.html#cb7-18" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-19"><a href="basic-visualisation-ideas.html#cb7-19" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb7-20"><a href="basic-visualisation-ideas.html#cb7-20" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_RT <span class="sc">-</span> se_RT, <span class="at">ymax =</span> mean_RT <span class="sc">+</span> se_RT), <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb7-21"><a href="basic-visualisation-ideas.html#cb7-21" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-22"><a href="basic-visualisation-ideas.html#cb7-22" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Previous Congruency&quot;</span>,</span>
+<span id="cb7-23"><a href="basic-visualisation-ideas.html#cb7-23" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;RT (in ms)&quot;</span>,</span>
+<span id="cb7-24"><a href="basic-visualisation-ideas.html#cb7-24" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Interaction Plot of CSEs across conditions&quot;</span></span>
+<span id="cb7-25"><a href="basic-visualisation-ideas.html#cb7-25" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-26"><a href="basic-visualisation-ideas.html#cb7-26" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb7-27"><a href="basic-visualisation-ideas.html#cb7-27" tabindex="-1"></a>  <span class="fu">facet_grid</span>( <span class="sc">~</span> Task_Type <span class="sc">+</span> Block_Type)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Other additional functions let you customize appearance (e.g., axes, ticks, legend, spacing), add text, combine plots (consider the packages <code>patchwork</code> or <code>cowplot</code>), and much more… Enjoy browsing the many options to be found online :)</p>
+</div>
+</div>
+</div>
+<div id="barplots" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Barplots<a href="basic-visualisation-ideas.html#barplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Similar to interaction plots, barplots are very commonly found in literature. As always, there are many ways to create barplots. One particular recommendation is using the function <code>bargraph.CI</code> from the <code>sciplot</code> package, as its arguments are straightforward, and it automatically computes and displays within-subject standard errors, saving you a few extra steps. The following example shows a barplot for the proportion congruency effect (PCE) in error rates.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="basic-visualisation-ideas.html#cb8-1" tabindex="-1"></a><span class="co"># load the package</span></span>
+<span id="cb8-2"><a href="basic-visualisation-ideas.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(sciplot)</span>
+<span id="cb8-3"><a href="basic-visualisation-ideas.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="basic-visualisation-ideas.html#cb8-4" tabindex="-1"></a><span class="do">## define Error Rate from Accuracy</span></span>
+<span id="cb8-5"><a href="basic-visualisation-ideas.html#cb8-5" tabindex="-1"></a>datACC<span class="sc">$</span>Err <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> datACC<span class="sc">$</span>ACC</span>
+<span id="cb8-6"><a href="basic-visualisation-ideas.html#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="basic-visualisation-ideas.html#cb8-7" tabindex="-1"></a><span class="do">## create barplot</span></span>
+<span id="cb8-8"><a href="basic-visualisation-ideas.html#cb8-8" tabindex="-1"></a><span class="fu">bargraph.CI</span>(Task_Prob, Err, <span class="at">group =</span> Congruency, <span class="at">data =</span> datACC[datACC<span class="sc">$</span>Task_Type <span class="sc">==</span> <span class="st">&quot;Flanker&quot;</span>, ],</span>
+<span id="cb8-9"><a href="basic-visualisation-ideas.html#cb8-9" tabindex="-1"></a>            <span class="at">legend=</span><span class="cn">TRUE</span>, <span class="at">x.leg =</span> <span class="dv">4</span>, <span class="at">y.leg =</span> <span class="fl">0.25</span>, <span class="at">cex.leg =</span> <span class="dv">1</span>,</span>
+<span id="cb8-10"><a href="basic-visualisation-ideas.html#cb8-10" tabindex="-1"></a>            <span class="at">ylab=</span><span class="st">&quot;Error Rate&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Proportion Congruency&quot;</span>,</span>
+<span id="cb8-11"><a href="basic-visualisation-ideas.html#cb8-11" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">&quot;PCE Flanker&quot;</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;lightgrey&quot;</span>),</span>
+<span id="cb8-12"><a href="basic-visualisation-ideas.html#cb8-12" tabindex="-1"></a>            <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.25</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-13"><a href="basic-visualisation-ideas.html#cb8-13" tabindex="-1"></a><span class="fu">box</span>(<span class="at">bty =</span> <span class="st">&quot;L&quot;</span>)</span>
+<span id="cb8-14"><a href="basic-visualisation-ideas.html#cb8-14" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="density-plots" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Density Plots<a href="basic-visualisation-ideas.html#density-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Although interaction plots (and barplots) are commonly used due to their clear visualization of effects, they are based on aggregated means, which can sometimes obscure important characteristics of the data, such as skewness, outliers, or distributional overlap between conditions. As an alternative, density plots offer a more detailed view of the underlying distribution.</p>
+<p>The following example shows how to create a density plot of RTs split by accuracy and congruency. The code is adjusted from a site by <a href="https://michael-franke.github.io/intro-data-analysis/app-93-data-sets-simon-task.html">Michael Franke</a>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="basic-visualisation-ideas.html#cb9-1" tabindex="-1"></a>d_sum <span class="ot">&lt;-</span> datACC <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="basic-visualisation-ideas.html#cb9-2" tabindex="-1"></a>  <span class="fu">group_by</span>(ACC, Congruency) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="basic-visualisation-ideas.html#cb9-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_RT =</span> <span class="fu">mean</span>(RT),</span>
+<span id="cb9-4"><a href="basic-visualisation-ideas.html#cb9-4" tabindex="-1"></a>            <span class="at">sd_RT =</span> <span class="fu">sd</span>(RT))</span>
+<span id="cb9-5"><a href="basic-visualisation-ideas.html#cb9-5" tabindex="-1"></a>d_sum</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 4
+## # Groups:   ACC [2]
+##     ACC Congruency  mean_RT sd_RT
+##   &lt;int&gt; &lt;fct&gt;         &lt;dbl&gt; &lt;dbl&gt;
+## 1     0 congruent      457.  97.1
+## 2     0 incongruent    416. 101. 
+## 3     1 congruent      412.  84.8
+## 4     1 incongruent    459.  90.7</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="basic-visualisation-ideas.html#cb11-1" tabindex="-1"></a>datACC <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> RT)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="basic-visualisation-ideas.html#cb11-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fl">0.0005</span>), <span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="fl">0.0005</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="basic-visualisation-ideas.html#cb11-3" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="basic-visualisation-ideas.html#cb11-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">data =</span> d_sum, </span>
+<span id="cb11-5"><a href="basic-visualisation-ideas.html#cb11-5" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">xintercept =</span> mean_RT), </span>
+<span id="cb11-6"><a href="basic-visualisation-ideas.html#cb11-6" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="at">size =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="basic-visualisation-ideas.html#cb11-7" tabindex="-1"></a>  <span class="fu">facet_grid</span>(</span>
+<span id="cb11-8"><a href="basic-visualisation-ideas.html#cb11-8" tabindex="-1"></a>    Congruency <span class="sc">~</span> ACC,</span>
+<span id="cb11-9"><a href="basic-visualisation-ideas.html#cb11-9" tabindex="-1"></a>    <span class="at">labeller =</span> <span class="fu">labeller</span>(<span class="at">ACC =</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span> <span class="ot">=</span> <span class="st">&quot;error&quot;</span>, <span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;correct&quot;</span>))</span>
+<span id="cb11-10"><a href="basic-visualisation-ideas.html#cb11-10" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="basic-visualisation-ideas.html#cb11-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb11-12"><a href="basic-visualisation-ideas.html#cb11-12" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-13"><a href="basic-visualisation-ideas.html#cb11-13" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb11-14"><a href="basic-visualisation-ideas.html#cb11-14" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb11-15"><a href="basic-visualisation-ideas.html#cb11-15" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>We can also overlap the density functions to display differences in the RT distribution within one plot:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="basic-visualisation-ideas.html#cb12-1" tabindex="-1"></a><span class="fu">ggplot</span>(datRT, <span class="fu">aes</span>(RT, <span class="at">group =</span> Congruency, <span class="at">fill =</span> Congruency)) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb12-2"><a href="basic-visualisation-ideas.html#cb12-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.75</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="basic-visualisation-ideas.html#cb12-3" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;grey40&quot;</span>, <span class="st">&quot;orange1&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="basic-visualisation-ideas.html#cb12-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb12-5"><a href="basic-visualisation-ideas.html#cb12-5" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb12-6"><a href="basic-visualisation-ideas.html#cb12-6" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb12-7"><a href="basic-visualisation-ideas.html#cb12-7" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb12-8"><a href="basic-visualisation-ideas.html#cb12-8" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="basic-visualisation-ideas.html#cb12-9" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">160</span>, <span class="dv">900</span>)) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="basic-visualisation-ideas.html#cb12-10" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">160</span>,<span class="dv">800</span>,<span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="basic-visualisation-ideas.html#cb12-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distributions for RT data&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Response latencies in ms&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Or finally, it’s always fun to explore additional, more fancy plotting packages. For instance, we can use the <code>ggridges</code> package to create a ridgeline (or overlapping density) plot. The following example (inspired by <a href="https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/#colors">Cedric Scherer</a>) shows how to plot reaction time distributions for all trial sequences of the Congruency Sequence Effect (CSE):</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="basic-visualisation-ideas.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb13-2"><a href="basic-visualisation-ideas.html#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="basic-visualisation-ideas.html#cb13-3" tabindex="-1"></a><span class="co"># define trial sequences first</span></span>
+<span id="cb13-4"><a href="basic-visualisation-ideas.html#cb13-4" tabindex="-1"></a>datRT<span class="sc">$</span>Sequence <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb13-5"><a href="basic-visualisation-ideas.html#cb13-5" tabindex="-1"></a>  <span class="fu">ifelse</span>(datRT<span class="sc">$</span>Congruency_N_1 <span class="sc">==</span> <span class="st">&quot;congruent&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;I&quot;</span>),</span>
+<span id="cb13-6"><a href="basic-visualisation-ideas.html#cb13-6" tabindex="-1"></a>  <span class="fu">ifelse</span>(datRT<span class="sc">$</span>Congruency <span class="sc">==</span> <span class="st">&quot;congruent&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;I&quot;</span>)</span>
+<span id="cb13-7"><a href="basic-visualisation-ideas.html#cb13-7" tabindex="-1"></a>)</span>
+<span id="cb13-8"><a href="basic-visualisation-ideas.html#cb13-8" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="basic-visualisation-ideas.html#cb13-9" tabindex="-1"></a><span class="co"># show four distinct plots</span></span>
+<span id="cb13-10"><a href="basic-visualisation-ideas.html#cb13-10" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb13-11"><a href="basic-visualisation-ideas.html#cb13-11" tabindex="-1"></a>  datRT,</span>
+<span id="cb13-12"><a href="basic-visualisation-ideas.html#cb13-12" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> RT, <span class="at">y =</span> Sequence, <span class="at">fill =</span> Sequence)</span>
+<span id="cb13-13"><a href="basic-visualisation-ideas.html#cb13-13" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb13-14"><a href="basic-visualisation-ideas.html#cb13-14" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(</span>
+<span id="cb13-15"><a href="basic-visualisation-ideas.html#cb13-15" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.8</span>,</span>
+<span id="cb13-16"><a href="basic-visualisation-ideas.html#cb13-16" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb13-17"><a href="basic-visualisation-ideas.html#cb13-17" tabindex="-1"></a>    <span class="at">scale =</span> <span class="fl">2.5</span>,</span>
+<span id="cb13-18"><a href="basic-visualisation-ideas.html#cb13-18" tabindex="-1"></a>    <span class="at">rel_min_height =</span> <span class="fl">0.01</span></span>
+<span id="cb13-19"><a href="basic-visualisation-ideas.html#cb13-19" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-20"><a href="basic-visualisation-ideas.html#cb13-20" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">160</span>, <span class="dv">900</span>)) <span class="sc">+</span></span>
+<span id="cb13-21"><a href="basic-visualisation-ideas.html#cb13-21" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">160</span>, <span class="dv">800</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb13-22"><a href="basic-visualisation-ideas.html#cb13-22" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb13-23"><a href="basic-visualisation-ideas.html#cb13-23" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;CC&quot;</span> <span class="ot">=</span> <span class="st">&quot;#A6CEE3&quot;</span>, <span class="st">&quot;CI&quot;</span> <span class="ot">=</span> <span class="st">&quot;#1F78B4&quot;</span>, <span class="st">&quot;IC&quot;</span> <span class="ot">=</span> <span class="st">&quot;#2171B5&quot;</span>, <span class="st">&quot;II&quot;</span> <span class="ot">=</span> <span class="st">&quot;#08306B&quot;</span>)</span>
+<span id="cb13-24"><a href="basic-visualisation-ideas.html#cb13-24" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-25"><a href="basic-visualisation-ideas.html#cb13-25" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-26"><a href="basic-visualisation-ideas.html#cb13-26" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Densities underlying the CSE&quot;</span>,</span>
+<span id="cb13-27"><a href="basic-visualisation-ideas.html#cb13-27" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Trial Sequence&quot;</span>,</span>
+<span id="cb13-28"><a href="basic-visualisation-ideas.html#cb13-28" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Response latencies in ms&quot;</span></span>
+<span id="cb13-29"><a href="basic-visualisation-ideas.html#cb13-29" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-30"><a href="basic-visualisation-ideas.html#cb13-30" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-31"><a href="basic-visualisation-ideas.html#cb13-31" tabindex="-1"></a>  <span class="fu">theme_ridges</span>() <span class="sc">+</span></span>
+<span id="cb13-32"><a href="basic-visualisation-ideas.html#cb13-32" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb13-33"><a href="basic-visualisation-ideas.html#cb13-33" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb13-34"><a href="basic-visualisation-ideas.html#cb13-34" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb13-35"><a href="basic-visualisation-ideas.html#cb13-35" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb13-36"><a href="basic-visualisation-ideas.html#cb13-36" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="combined-plots" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Combined Plots<a href="basic-visualisation-ideas.html#combined-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ultimately, it might be helpful to combine showing the means of your experimental conditions with visualizations of the full distribution of your dependent variable. For instance, instead of a simple barplot, consider using a violin plot paired with a boxplot (see the first example of <a href="https://doi.org/10.12688/wellcomeopenres.15191.2">Allen et al., 2021</a>, the authors also provide code).</p>
+<p>Taking this a step further, inspired by a figure from Schiltenwolf et al., 2022 (to be found in <a href="https://tobias-lib.ub.uni-tuebingen.de/xmlui/bitstream/handle/10900/154035/Thesis_Schiltenwolf_pub.pdf?sequence=1&amp;isAllowed=y">Schiltenwolf, 2024</a>, p. 93)
+), the following example combines an interaction plot with both violin and bar plots in a single visualization:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="basic-visualisation-ideas.html#cb14-1" tabindex="-1"></a><span class="co"># create a dataset first to rename factors and to filter Block Type</span></span>
+<span id="cb14-2"><a href="basic-visualisation-ideas.html#cb14-2" tabindex="-1"></a>datRT_plot <span class="ot">&lt;-</span> datRT <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="basic-visualisation-ideas.html#cb14-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-4"><a href="basic-visualisation-ideas.html#cb14-4" tabindex="-1"></a>    <span class="at">Congruency =</span> <span class="fu">recode</span>(Congruency,</span>
+<span id="cb14-5"><a href="basic-visualisation-ideas.html#cb14-5" tabindex="-1"></a>                        <span class="st">&quot;congruent&quot;</span> <span class="ot">=</span> <span class="st">&quot;con&quot;</span>, <span class="st">&quot;incongruent&quot;</span> <span class="ot">=</span> <span class="st">&quot;inc&quot;</span>),</span>
+<span id="cb14-6"><a href="basic-visualisation-ideas.html#cb14-6" tabindex="-1"></a>    <span class="at">Congruency_N_1 =</span> <span class="fu">recode</span>(Congruency_N_1,</span>
+<span id="cb14-7"><a href="basic-visualisation-ideas.html#cb14-7" tabindex="-1"></a>                            <span class="st">&quot;congruent&quot;</span> <span class="ot">=</span> <span class="st">&quot;N-1 con&quot;</span>, <span class="st">&quot;incongruent&quot;</span> <span class="ot">=</span> <span class="st">&quot;N-1 inc&quot;</span>),</span>
+<span id="cb14-8"><a href="basic-visualisation-ideas.html#cb14-8" tabindex="-1"></a>    <span class="at">Congruency =</span> <span class="fu">factor</span>(Congruency, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;con&quot;</span>, <span class="st">&quot;inc&quot;</span>)),</span>
+<span id="cb14-9"><a href="basic-visualisation-ideas.html#cb14-9" tabindex="-1"></a>    <span class="at">Congruency_N_1 =</span> <span class="fu">factor</span>(Congruency_N_1, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;N-1 con&quot;</span>, <span class="st">&quot;N-1 inc&quot;</span>)),</span>
+<span id="cb14-10"><a href="basic-visualisation-ideas.html#cb14-10" tabindex="-1"></a>    <span class="at">Task_Type =</span> <span class="fu">factor</span>(Task_Type))  <span class="sc">%&gt;%</span></span>
+<span id="cb14-11"><a href="basic-visualisation-ideas.html#cb14-11" tabindex="-1"></a>  <span class="fu">filter</span>(Block_Type <span class="sc">==</span> <span class="st">&quot;single&quot;</span>)</span>
+<span id="cb14-12"><a href="basic-visualisation-ideas.html#cb14-12" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="basic-visualisation-ideas.html#cb14-13" tabindex="-1"></a><span class="co"># create the plot</span></span>
+<span id="cb14-14"><a href="basic-visualisation-ideas.html#cb14-14" tabindex="-1"></a><span class="fu">ggplot</span>(datRT_plot, <span class="fu">aes</span>(<span class="at">x =</span> Congruency_N_1, <span class="at">y =</span> <span class="fu">as.numeric</span>(RT), <span class="at">fill =</span> Congruency)) <span class="sc">+</span></span>
+<span id="cb14-15"><a href="basic-visualisation-ideas.html#cb14-15" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">position =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">width =</span> <span class="fl">0.9</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb14-16"><a href="basic-visualisation-ideas.html#cb14-16" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.4</span>), <span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb14-17"><a href="basic-visualisation-ideas.html#cb14-17" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="fu">aes</span>(<span class="at">group =</span> Congruency),</span>
+<span id="cb14-18"><a href="basic-visualisation-ideas.html#cb14-18" tabindex="-1"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.4</span>), <span class="at">shape =</span> <span class="dv">21</span>, </span>
+<span id="cb14-19"><a href="basic-visualisation-ideas.html#cb14-19" tabindex="-1"></a>               <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb14-20"><a href="basic-visualisation-ideas.html#cb14-20" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="fu">aes</span>(<span class="at">group =</span> Congruency),</span>
+<span id="cb14-21"><a href="basic-visualisation-ideas.html#cb14-21" tabindex="-1"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.4</span>), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb14-22"><a href="basic-visualisation-ideas.html#cb14-22" tabindex="-1"></a>               <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb14-23"><a href="basic-visualisation-ideas.html#cb14-23" tabindex="-1"></a>  <span class="fu">facet_grid</span>( <span class="sc">~</span> Task_Type) <span class="sc">+</span></span>
+<span id="cb14-24"><a href="basic-visualisation-ideas.html#cb14-24" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Reaction Times (in ms)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb14-25"><a href="basic-visualisation-ideas.html#cb14-25" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span> </span>
+<span id="cb14-26"><a href="basic-visualisation-ideas.html#cb14-26" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-27"><a href="basic-visualisation-ideas.html#cb14-27" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="dv">1</span>),</span>
+<span id="cb14-28"><a href="basic-visualisation-ideas.html#cb14-28" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;#2c3e50&quot;</span>),</span>
+<span id="cb14-29"><a href="basic-visualisation-ideas.html#cb14-29" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb14-30"><a href="basic-visualisation-ideas.html#cb14-30" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
+<span id="cb14-31"><a href="basic-visualisation-ideas.html#cb14-31" tabindex="-1"></a>    <span class="at">legend.box =</span> <span class="st">&quot;horizontal&quot;</span>,</span>
+<span id="cb14-32"><a href="basic-visualisation-ideas.html#cb14-32" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb14-33"><a href="basic-visualisation-ideas.html#cb14-33" tabindex="-1"></a>    <span class="at">legend.key.height =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="cb14-34"><a href="basic-visualisation-ideas.html#cb14-34" tabindex="-1"></a>    <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">5</span>),</span>
+<span id="cb14-35"><a href="basic-visualisation-ideas.html#cb14-35" tabindex="-1"></a>    <span class="at">legend.box.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb14-36"><a href="basic-visualisation-ideas.html#cb14-36" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#3498db&quot;</span>, <span class="st">&quot;#2ecc71&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>While this plot conveys lots of information about the data, its main message may not be immediately clear. So in the next section, we’ll explore how to visualize difference scores to present effects most straightforwardly (as also done by Schiltenwolf and colleagues in a second plot).</p>
+</div>
+<div id="plotting-mean-differences" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Plotting mean differences<a href="basic-visualisation-ideas.html#plotting-mean-differences" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A plot of mean differences is often the clearest way to highlight the effect you’re interested in. Keep two points in mind: first, this type of visualization can be more complex to code, since you may need to build it from scratch rather than relying on pre-built functions. Second, it’s recommended to complement a mean differences plot with another visualization (such as an interaction plot, density plot, or a combined plot), to show what contributes to those differences.</p>
+<p>The following example illustrates a comparison of the post-error slowing effect between single-task blocks (flanker or Simon) and mixed-task blocks (both flanker and Simon). The general approach is that you calculate the effect first (this could also apply to effects like the CSE, switch costs, PCE, etc.) and then plot it as a barplot with SEs.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="basic-visualisation-ideas.html#cb15-1" tabindex="-1"></a><span class="co"># set the number of participants</span></span>
+<span id="cb15-2"><a href="basic-visualisation-ideas.html#cb15-2" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb15-3"><a href="basic-visualisation-ideas.html#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="basic-visualisation-ideas.html#cb15-4" tabindex="-1"></a><span class="co"># aggregate data, so you can calculate RT(N-1 Error) - RT(N-1 Correct) per subject</span></span>
+<span id="cb15-5"><a href="basic-visualisation-ideas.html#cb15-5" tabindex="-1"></a>dat1 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Subject <span class="sc">+</span> ACC_N_1,</span>
+<span id="cb15-6"><a href="basic-visualisation-ideas.html#cb15-6" tabindex="-1"></a>                  datRT[datRT<span class="sc">$</span>Block_Type <span class="sc">==</span> <span class="st">&quot;single&quot;</span>,], mean)</span>
+<span id="cb15-7"><a href="basic-visualisation-ideas.html#cb15-7" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="basic-visualisation-ideas.html#cb15-8" tabindex="-1"></a><span class="co"># create an empty dataframe to store the individual values of post-error slowing</span></span>
+<span id="cb15-9"><a href="basic-visualisation-ideas.html#cb15-9" tabindex="-1"></a>dat_PES_single <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb15-10"><a href="basic-visualisation-ideas.html#cb15-10" tabindex="-1"></a>  <span class="at">Subject =</span> <span class="fu">unique</span>(dat1<span class="sc">$</span>Subject),</span>
+<span id="cb15-11"><a href="basic-visualisation-ideas.html#cb15-11" tabindex="-1"></a>  <span class="at">RT =</span> <span class="cn">NA</span></span>
+<span id="cb15-12"><a href="basic-visualisation-ideas.html#cb15-12" tabindex="-1"></a>)</span>
+<span id="cb15-13"><a href="basic-visualisation-ideas.html#cb15-13" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="basic-visualisation-ideas.html#cb15-14" tabindex="-1"></a><span class="co"># loop through all subjects and calculate PES for each one</span></span>
+<span id="cb15-15"><a href="basic-visualisation-ideas.html#cb15-15" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> (<span class="fu">unique</span>(dat1<span class="sc">$</span>Subject))) {</span>
+<span id="cb15-16"><a href="basic-visualisation-ideas.html#cb15-16" tabindex="-1"></a>  dat3 <span class="ot">&lt;-</span> dat1[dat1<span class="sc">$</span>Subject <span class="sc">==</span> i, ]</span>
+<span id="cb15-17"><a href="basic-visualisation-ideas.html#cb15-17" tabindex="-1"></a>  dat_PES_single<span class="sc">$</span>RT[dat_PES_single<span class="sc">$</span>Subject <span class="sc">==</span> i] <span class="ot">&lt;-</span> <span class="fu">diff</span>(dat3<span class="sc">$</span>RT) <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb15-18"><a href="basic-visualisation-ideas.html#cb15-18" tabindex="-1"></a>}</span>
+<span id="cb15-19"><a href="basic-visualisation-ideas.html#cb15-19" tabindex="-1"></a></span>
+<span id="cb15-20"><a href="basic-visualisation-ideas.html#cb15-20" tabindex="-1"></a><span class="co"># store mean and SE of PES as objects</span></span>
+<span id="cb15-21"><a href="basic-visualisation-ideas.html#cb15-21" tabindex="-1"></a>mean_single <span class="ot">&lt;-</span> <span class="fu">mean</span>(dat_PES_single<span class="sc">$</span>RT)</span>
+<span id="cb15-22"><a href="basic-visualisation-ideas.html#cb15-22" tabindex="-1"></a>se_single <span class="ot">&lt;-</span> <span class="fu">sd</span>(dat_PES_single<span class="sc">$</span>RT) <span class="sc">/</span> <span class="fu">sqrt</span>(N)</span>
+<span id="cb15-23"><a href="basic-visualisation-ideas.html#cb15-23" tabindex="-1"></a></span>
+<span id="cb15-24"><a href="basic-visualisation-ideas.html#cb15-24" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="basic-visualisation-ideas.html#cb15-25" tabindex="-1"></a><span class="do">## repeat all steps for the mixed blocks</span></span>
+<span id="cb15-26"><a href="basic-visualisation-ideas.html#cb15-26" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RT <span class="sc">~</span> Subject <span class="sc">+</span> ACC_N_1,</span>
+<span id="cb15-27"><a href="basic-visualisation-ideas.html#cb15-27" tabindex="-1"></a>                  datRT[datRT<span class="sc">$</span>Block_Type <span class="sc">==</span> <span class="st">&quot;mixed&quot;</span>,], mean)</span>
+<span id="cb15-28"><a href="basic-visualisation-ideas.html#cb15-28" tabindex="-1"></a></span>
+<span id="cb15-29"><a href="basic-visualisation-ideas.html#cb15-29" tabindex="-1"></a>dat_PES_mixed <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb15-30"><a href="basic-visualisation-ideas.html#cb15-30" tabindex="-1"></a>  <span class="at">Subject =</span> <span class="fu">unique</span>(dat2<span class="sc">$</span>Subject),</span>
+<span id="cb15-31"><a href="basic-visualisation-ideas.html#cb15-31" tabindex="-1"></a>  <span class="at">RT =</span> <span class="cn">NA</span></span>
+<span id="cb15-32"><a href="basic-visualisation-ideas.html#cb15-32" tabindex="-1"></a>)</span>
+<span id="cb15-33"><a href="basic-visualisation-ideas.html#cb15-33" tabindex="-1"></a></span>
+<span id="cb15-34"><a href="basic-visualisation-ideas.html#cb15-34" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> (<span class="fu">unique</span>(dat2<span class="sc">$</span>Subject))) {</span>
+<span id="cb15-35"><a href="basic-visualisation-ideas.html#cb15-35" tabindex="-1"></a>  dat3 <span class="ot">&lt;-</span> dat2[dat2<span class="sc">$</span>Subject <span class="sc">==</span> i, ]</span>
+<span id="cb15-36"><a href="basic-visualisation-ideas.html#cb15-36" tabindex="-1"></a>  dat_PES_mixed<span class="sc">$</span>RT[dat_PES_mixed<span class="sc">$</span>Subject <span class="sc">==</span> i] <span class="ot">&lt;-</span> <span class="fu">diff</span>(dat3<span class="sc">$</span>RT) <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb15-37"><a href="basic-visualisation-ideas.html#cb15-37" tabindex="-1"></a>}</span>
+<span id="cb15-38"><a href="basic-visualisation-ideas.html#cb15-38" tabindex="-1"></a></span>
+<span id="cb15-39"><a href="basic-visualisation-ideas.html#cb15-39" tabindex="-1"></a>mean_mixed <span class="ot">&lt;-</span> <span class="fu">mean</span>(dat_PES_mixed<span class="sc">$</span>RT)</span>
+<span id="cb15-40"><a href="basic-visualisation-ideas.html#cb15-40" tabindex="-1"></a>se_mixed <span class="ot">&lt;-</span> <span class="fu">sd</span>(dat_PES_mixed<span class="sc">$</span>RT) <span class="sc">/</span> <span class="fu">sqrt</span>(N)</span>
+<span id="cb15-41"><a href="basic-visualisation-ideas.html#cb15-41" tabindex="-1"></a></span>
+<span id="cb15-42"><a href="basic-visualisation-ideas.html#cb15-42" tabindex="-1"></a></span>
+<span id="cb15-43"><a href="basic-visualisation-ideas.html#cb15-43" tabindex="-1"></a><span class="co"># combine both scores in one barplot</span></span>
+<span id="cb15-44"><a href="basic-visualisation-ideas.html#cb15-44" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> <span class="fu">c</span>(mean_single, mean_mixed),</span>
+<span id="cb15-45"><a href="basic-visualisation-ideas.html#cb15-45" tabindex="-1"></a>        <span class="at">names.arg =</span> <span class="fu">c</span>(<span class="st">&quot;Single task blocks&quot;</span>, <span class="st">&quot;Mixed task blocks&quot;</span>),</span>
+<span id="cb15-46"><a href="basic-visualisation-ideas.html#cb15-46" tabindex="-1"></a>        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">80</span>),</span>
+<span id="cb15-47"><a href="basic-visualisation-ideas.html#cb15-47" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Post-Error Slowing (ms)&quot;</span>,</span>
+<span id="cb15-48"><a href="basic-visualisation-ideas.html#cb15-48" tabindex="-1"></a>        <span class="at">space =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;#F08080&quot;</span>))</span>
+<span id="cb15-49"><a href="basic-visualisation-ideas.html#cb15-49" tabindex="-1"></a><span class="co"># add SE bars</span></span>
+<span id="cb15-50"><a href="basic-visualisation-ideas.html#cb15-50" tabindex="-1"></a><span class="fu">arrows</span>(<span class="at">x0 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">2.5</span>), <span class="at">y0 =</span> <span class="fu">c</span>(mean_single <span class="sc">-</span> se_single, mean_mixed <span class="sc">-</span> se_mixed),</span>
+<span id="cb15-51"><a href="basic-visualisation-ideas.html#cb15-51" tabindex="-1"></a>       <span class="at">y1 =</span> <span class="fu">c</span>(mean_single <span class="sc">+</span> se_single, mean_mixed <span class="sc">+</span> se_mixed),</span>
+<span id="cb15-52"><a href="basic-visualisation-ideas.html#cb15-52" tabindex="-1"></a>       <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">code =</span> <span class="dv">3</span>, <span class="at">length =</span> .<span class="dv">3</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb15-53"><a href="basic-visualisation-ideas.html#cb15-53" tabindex="-1"></a></span>
+<span id="cb15-54"><a href="basic-visualisation-ideas.html#cb15-54" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.0</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>By combining this approach with the a plot from the previous section, we can create an visualization that balances transparency and clarity: Plot A shows the underlying data structure, while Plot B clearly highlights the effect of interest. This combination comes close to the ideal of a well-rounded, informative plot.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<div id="final-notes-on-graphics" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Final notes on graphics<a href="basic-visualisation-ideas.html#final-notes-on-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When working with graphics in R, it’s a good practice to save your plots as objects rather than copying them directly from RStudio’s plot pane. This allows you to export high-resolution images using functions like <code>ggsave()</code> for <code>ggplot2</code> objects or <code>png()</code> / <code>pdf()</code> for base R plots.</p>
+<p>If you’re creating multiple related plots (e.g., error rates and reaction times), maintain consistency in colors and styles across all figures (e.g., see the last example).</p>
+<p>If you want to play around with colors, I recommend checking out the <a href="https://r-graph-gallery.com/color-palette-finder">R Graph Gallery’s Color Palette Finder</a>. Once you find a palette you like, just click the download icon to export the hexadecimal color codes for easy use in your plots. Another resource is <a href="https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">ColorBrewer</a>, which offers a variety of well-designed color schemes. Just keep in mind that colors may look different when printed on paper.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="specific-effects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-basicvisualisation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
